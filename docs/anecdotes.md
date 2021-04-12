@@ -21,3 +21,6 @@ Below you'll find a collection of anecdotes and comments from the industry on th
 > "We don't want it leaked to our competitor."
 >
 > <cite><a href="https://twitter.com/jfcloutier/status/1334869094873636868" target="_blank">@jfcloutier - December 4, 2020</a></cite>
+
+- [Some advantages of using a formal language to write a software specification](https://www.quora.com/I-heard-today-that-there-are-some-advantages-of-using-a-formal-language-to-write-a-software-specification-What-are-they) - Alan Kay
+- [How do I lay out my software architecture before I code if the requirements change every day?](https://www.quora.com/How-do-I-lay-out-my-software-architecture-before-I-code-if-the-requirements-change-every-day/answer/Alan-Kay-11) - Alan Kay
