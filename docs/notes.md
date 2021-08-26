@@ -35,3 +35,6 @@
 - https://www.coursera.org/lecture/python-databases/bonus-interview-software-engineering-bertrand-meyer-u9kD7 
 - https://www.aha.io/
 - https://www.zerohedge.com/technology/nasa-blasts-boeings-software-certification-process-missed-potentially-catastrophic
+
+Project, Program, Portfolio
+- https://pmstudycircle.com/project-management-vs-program-management-vs-portfolio-management/
