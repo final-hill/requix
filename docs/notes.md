@@ -38,3 +38,25 @@
 
 Project, Program, Portfolio
 - https://pmstudycircle.com/project-management-vs-program-management-vs-portfolio-management/
+
+ERD
+
+On Mapping between UML and Entity-Relationship Model
+https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.43.2487&rep=rep1&type=pdf
+
+https://softwareengineering.stackexchange.com/questions/361079/how-to-define-a-class-diagram-from-an-entity-relationship-diagram
+https://search.brave.com/search?q=class+diagram+weak+entity&source=desktop
+https://search.brave.com/search?q=weak+entity+in+class+diagram&source=desktop
+https://www.quora.com/How-do-I-show-a-weak-entity-relationship-on-a-class-diagram
+http://holowczak.com/drawing-entity-relationship-diagrams-with-uml-notation-using-lucidchart/
+http://pages.cpsc.ucalgary.ca/~eberly/Courses/CPSC333/Lectures/ERD/weak_entities.html
+https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
+https://en.wikipedia.org/wiki/User_interface_modeling
+https://www.intechopen.com/chapters/8982
+https://search.brave.com/search?q=ER+Model+user+interface&source=desktop
+https://link.springer.com/article/10.1007/s00766-017-0270-1
+https://www.google.com/search?q=%22ER%22+diagram+to+epic+and+feature+story&ei=8UklYc64EMGrtQauvYCQBA&oq=%22ER%22+diagram+to+epic+and+feature+story&gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsAM6CggAEEcQsAMQiwNKBQg8EgExSgQIQRgBUImLAViJkgFg8ZMBaAFwAHgAgAHJAYgB-AKSAQUyLjAuMZgBAKABAcgBCLgBAsABAQ&sclient=gws-wiz&ved=0ahUKEwiO9Zbcs8ryAhXBVc0KHa4eAEIQ4dUDCA8&uact=5
+https://stackoverflow.com/questions/23261380/uml-class-diagram-attribute-or-association
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
+https://www.guru99.com/association-aggregation-composition-difference.html
+https://search.brave.com/search?q=ER+Diagram+Chasm+trap&source=web
