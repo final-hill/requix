@@ -1,6 +1,7 @@
 # Glossary
 
 ## Actor
+
 ## Artifact
 
 ## Environment
