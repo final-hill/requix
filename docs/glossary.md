@@ -1,5 +1,6 @@
 # Glossary
 
+## Actor
 ## Artifact
 
 ## Environment
@@ -35,3 +36,5 @@ An entity (usually a person) who is affected by or can affect a project or its r
 ## System
 
 ## Use Case
+
+## User Story
