@@ -60,3 +60,7 @@ https://stackoverflow.com/questions/23261380/uml-class-diagram-attribute-or-asso
 https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
 https://www.guru99.com/association-aggregation-composition-difference.html
 https://search.brave.com/search?q=ER+Diagram+Chasm+trap&source=web
+
+[Translating Natural Language Propositions to First Order Logic](https://www.cse.iitk.ac.in/users/karkare/MTP/2014-15/naman2015logica.pdf)
+[Natural Language Statement to SQL Query Translator](https://www.researchgate.net/publication/260845646_Natural_Language_Statement_to_SQL_Query_Translator)
+[Show HN: Translate English to SQL](https://news.ycombinator.com/item?id=20101381)
