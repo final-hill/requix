@@ -6,9 +6,11 @@
 
 ## Environment
 
-The set of entities (people, organizations, regulations, devices, etc) external to the project or system but with the potential to affect it or be affected by it
+The set of entities (people, organizations, regulations, devices, etc) external to the project or system but with the potential to affect it or be affected by it.
 
 ## Goal
+
+A result desired by an organization.
 
 ## Project
 
@@ -26,15 +28,24 @@ A formal, declarative sentence that is either true or false. A Predicate.
 
 A true or false expression dependent on a particular context
 
+### Relevant
+
+A goal property is relevant. A property of a project or system is relevant if it can affect or be
+affected by a stakeholder. A property of the environment is relevant if it can affect or be affected
+by the project or system.
+
 ### Statement
 
 Human readable expression of a property
 
 ## Stakeholder
 
-An entity (usually a person) who is affected by or can affect a project or its related system
+The stakeholders of a project are the groups of people recognized by the project as having the
+potential to affect or being affected by the project, environment, goals or system.
 
 ## System
+
+A set of related artifacts, devised to help meet certain goals.
 
 ## Use Case
 
