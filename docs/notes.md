@@ -64,3 +64,60 @@ https://search.brave.com/search?q=ER+Diagram+Chasm+trap&source=web
 [Translating Natural Language Propositions to First Order Logic](https://www.cse.iitk.ac.in/users/karkare/MTP/2014-15/naman2015logica.pdf)
 [Natural Language Statement to SQL Query Translator](https://www.researchgate.net/publication/260845646_Natural_Language_Statement_to_SQL_Query_Translator)
 [Show HN: Translate English to SQL](https://news.ycombinator.com/item?id=20101381)
+
+https://help.eclipse.org/2021-06/index.jsp?topic=%2Forg.eclipse.ocl.doc%2Fhelp%2FOCLinPapyrus.html
+https://en.wikipedia.org/wiki/Unified_Modeling_Language#UML_2
+https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
+https://marketplace.visualstudio.com/items?itemName=edevtech-mr.SmartVisio4TFS
+https://www.modernrequirements.com/
+https://search.brave.com/images?q=UMl%20scenario
+https://en.wikipedia.org/wiki/Use_case_diagram#/media/File:Use_case_restaurant_model.svg
+https://sourcemaking.com/uml/modeling-it-systems
+https://www.uml-diagrams.org/derived-property.html
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/uml-aggregation-vs-composition/
+
+========
+organizations and old requirements dumped in archives...
+
+BAs being little more than glorified note-takers
+
+sprint cadence in an org and the importance
+	- design team making new components and such for an org
+	- another team watning to use but not available until the middle of a sprint...
+- etc.
+=========
+
+TDD and BDD
+https://twitter.com/keithb_b/status/1373347017552957441
+
+======
+https://twitter.com/dabeaz/status/1362805894824738822
+==========
+
+requix
+	There are potentially an unlimited number of custom diagrams, charts, and graphs
+	that translate into requirements
+	Requix should expose the ability to define the meaning of these with some form of editor
+		Ex: a means of mapping ER diagram nodes to the equivalent Requirements definition in the KB
+
+=========================
+if it's not worthy of being in the glossary, should it be an entity in an ER Diagram?
+
+"Extracting conceptual models from user stories with Visual Narrator"
+https://link.springer.com/article/10.1007/s00766-017-0270-1
+
+ER Model gives the domain
+	- https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
+	- this can be translated into a database definition
+	- class diagrams for an application
+	- divided into subdomains to provide a basis for a microservice architecture
+		- https://medium.com/nick-tune-tech-strategy-blog/domains-subdomain-problem-solution-space-in-ddd-clearly-defined-e0b49c7b586c
+		- https://microservices.io/patterns/decomposition/decompose-by-subdomain.html
+		- https://stackoverflow.com/questions/68151566/how-to-divide-a-er-digram-into-multiple-microservices
+	- Traps
+		- https://stackoverflow.com/questions/14328319/fan-trap-and-chasm-trap-database
+		- https://ecomputernotes.com/fundamental/what-is-a-database/problems-with-e-r-model
+		- https://stackoverflow.com/questions/40555032/eliminating-cycles-in-er-model
+		- https://stackoverflow.com/questions/8115748/why-should-i-avoid-loops-when-designing-relationships-for-a-database?noredirect=1&lq=1
+
+====================================
