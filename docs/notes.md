@@ -164,6 +164,7 @@ https://cs.uwaterloo.ca/~david/kbdb/logic-er-fol.pdf
 Code Contracts and FOL
 https://www.google.com/search?hl=en&biw=1280&bih=740&ei=4BGeXIvkIYHfjgT-srz4Dg&q=code+contracts+and+First+Order+Logic&oq=code+contracts+and+First+Order+Logic&gs_l=psy-ab.3..33i299l2.12666.20184..20328...0.0..0.379.5179.0j32j2j1......0....1..gws-wiz.......0i71j35i39j0i131j0i67j0j0i10j0i22i30j33i160j33i22i29i30j33i10.9w9W4q3WkDc
 
+https://search.brave.com/search?q=UML+to+First+order+logic
 
 Blame Calculus
 http://homepages.inf.ed.ac.uk/wadler/topics/blame.html
