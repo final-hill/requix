@@ -121,3 +121,206 @@ ER Model gives the domain
 		- https://stackoverflow.com/questions/8115748/why-should-i-avoid-loops-when-designing-relationships-for-a-database?noredirect=1&lq=1
 
 ====================================
+	• "A Requirement is a specification of a particular system property" [1]
+	• "a requirement is a singular documented physical or functional need that a particular design, product or process aims to satisfy" [2]
+	• "A Requirement is a Proposition" [3]
+		○ https://en.wikipedia.org/wiki/Proposition
+
+https://en.wikipedia.org/wiki/Requirements_engineering
+https://bertrandmeyer.com/2018/12/17/formal-picnic-approach-requirements/
+[1] http://se.ethz.ch/~meyer/publications/methodology/multirequirements.pdf
+[2] https://en.wikipedia.org/wiki/Requirement
+[3] Hypothesis
+  https://bertrandmeyer.com/2019/08/20/sunrise-best-obscurity/
+
+
+  Smart data vs dumb code:
+
+Assume I have: BreadCrumb( name:string, url: Url )
+
+The requirement is that the name should not contain hyphens. (They should be spaces instead)
+Should the sanitation be done by the client of the object? I'd say no as this logic is duplicated.
+Should this be done by the setter of name? Should it throw an error?
+As a requirement, how is tracability managed?
+====================================
+
+https://en.wikipedia.org/wiki/Crossing_number_(graph_theory)
+
+http://logical.ai/fn.trees/drawingtrees.pdf 
+
+http://wiki.c2.com/?SetsOfRequirements
+
+==================
+propositional logic diagrams
+
+http://logic.umwblogs.org/categorical-logic/categorical-logic-diagramming-propositions/
+
+https://www.cse.unsw.edu.au/~se2011/2014Material/Week06/ERD.pdf
+https://www.geeksforgeeks.org/minimization-er-diagram/
+
+ERD => FOL
+https://cs.uwaterloo.ca/~david/kbdb/logic-er-fol.pdf
+
+Code Contracts and FOL
+https://www.google.com/search?hl=en&biw=1280&bih=740&ei=4BGeXIvkIYHfjgT-srz4Dg&q=code+contracts+and+First+Order+Logic&oq=code+contracts+and+First+Order+Logic&gs_l=psy-ab.3..33i299l2.12666.20184..20328...0.0..0.379.5179.0j32j2j1......0....1..gws-wiz.......0i71j35i39j0i131j0i67j0j0i10j0i22i30j33i160j33i22i29i30j33i10.9w9W4q3WkDc
+
+
+Blame Calculus
+http://homepages.inf.ed.ac.uk/wadler/topics/blame.html
+
+multirequirements
+http://se.ethz.ch/~meyer/publications/methodology/multirequirements.pdf
+
+https://onedrive.live.com/edit.aspx?cid=aa5a2b1111963009&page=view&resid=AA5A2B1111963009!22886&parId=AA5A2B1111963009!22773&app=Word&wacqt=search
+
+https://web.archive.org/web/20170709143736/http://www.everythingoracle.com/obieefanch.htm
+
+https://db.grussell.org/section005.html#_Toc67114416
+
+https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model
+
+https://stackoverflow.com/questions/14328319/fan-trap-and-chasm-trap-database
+
+https://documentation.sisense.com/latest/managing-data/working-with-data/chasm-fan-traps.htm
+
+https://www.nasa.gov/centers/ivv/pdf/482456main_1530_-_Graph_theory_traceability_01.pdf
+
+https://cs.uwaterloo.ca/~david/kbdb/logic-er-fol.pdf
+
+Requirements logic
+Combining kanren with requirements search
+
+https://cdn2.hubspot.net/hubfs/2367473/LeadGen%20Content/EARS%20-%20The%20Easy%20Approach%20to%20Requirements%20Syntax%20Guide.pdf?utm_campaign=Inbound%20%E2%80%93%20EARS%20Guide&utm_source=hs_automation&utm_medium=email&utm_content=74410913&_hsenc=p2ANqtz-8UvUk6SaDvoop706QqShnd5txFndUrFZ-V0MFsdufES8lNCYY3_MDrant0E8tnFruvYOJnYbLvP_ng3vNSkLMhwX9PLw&_hsmi=74410913
+
+
+https://bertrandmeyer.com/2019/11/14/formality-requirements-new-publication/
+
+
+Requirements Engineering
+
+	User Requirements Spec (URS)
+	Interface Requirements Spec (IRS)
+		https://resources.sei.cmu.edu/asset_files/TechnicalNote/2002_004_001_13973.pdf
+
+https://en.wikipedia.org/wiki/MoSCoW_method
+
+
+
+Requirements management
+
+	https://www.johndcook.com/blog/2010/01/12/software-sins-of-omission/
+
+
+Requirements driven development vs Prolog.
+Deriving implementation by constraints? Same trade-offs?
+	Unlike prolog you're not searching the available space though... Or are you?
+
+
+feature branching not optimal?
+	feature interact
+	requirements are cross cutting
+	
+	if two features are bein developed in an iteration and they share dependencies, coordination
+	is needed. feature A has to merge with feature B or vice-verse for coordination.
+	with N features this does not scale... Features need a common branch which is not master...
+	release branch?
+		just duplicates master if not maintaining these releases...
+	
+what is the basic unit of development?
+	- feature?
+		is it the minimum unit of an iteration and therefore not good for daily work or for sharing tasks
+		can a feature be completed in an iteration? it can have multiple requirements
+	- requirement?
+		requirement is 1 to many relationship with features...
+
+
+in planning organization don't put requirements under features?
+	who has tasks? features or requirements? both?
+	requirements need tests for verification
+
+
+===================
+Requirements Driven Development
+
+	• https://www.electronicdesign.com/archive/requirements-driven-development-too-challenging-be-worth-it
+	• "Fact" vs Requirement vs Unit Test
+		○ https://blog.ploeh.dk/2019/10/07/devils-advocate/
+https://stackoverflow.com/questions/22373258/difference-between-fact-and-theory-xunit-net#22373624
+
+===========
+Unit tests and Requirements
+Lack of coverage hints at a missing requirement.
+===============
+
+jRules
+
+	predicates and actions
+	https://stackoverflow.com/questions/3239017/what-is-jrules-brms
+	
+	
+Codeless solution
+
+squarespace
+==============
+Design by Contract 
+
+	• http://lambda-the-ultimate.org/node/910
+	• https://stackoverflow.com/a/5965869
+	• https://marketplace.visualstudio.com/items?itemName=RiSEResearchinSoftwareEngineering.CodeContractsforNET
+	• Design by contract
+	• http://wiki.c2.com/?DesignByContract
+	• http://wiki.c2.com/?HoareTriple
+	• https://slideplayer.com/slide/5211131/
+	• Relationship with Requirements:
+		○ http://se.ethz.ch/~meyer/publications/methodology/multirequirements.pdf
+		○ https://bertrandmeyer.com/2018/12/17/formal-picnic-approach-requirements/
+		○ https://www.nasa.gov/sites/default/files/482456main_1530_-_Graph_theory_traceability_01.pdf 
+	• Relationship with Types
+		○ https://gciruelos.com/propositions-as-types.html 
+	
+http://lambda-the-ultimate.org/node/4667#comment-74004 
+
+Bracha talks of Pluggable Types
+ 
+Perhaps these Types come from the Requirements project?
+    A set of propositions and such which generate types or contracts.
+    The Domain of Discourse
+        Aside: Contracts as a domain of discourse?
+    THis then feeds into the code as a capability model.
+    change the requirements => changes the types => etc.
+
+
+    ==============
+    User Requirement Format
+
+	As an <actor phrase > I want <action phrase> so that <outcome phrase>
+
+Acceptance Criteria Format
+Functional/Nonfunctional/Performance/Error Handling…
+
+
+======================
+When requirements change, dependency on dark corners of code become an issue
+
+
+================
+in FOSS, the boring work doesn't get done...
+The boring part could include security requirements... 
+
+
+==================
+Simultaneous SOWs
+
+Different billing and delivery dates
+
+Parallel work
+
+Shared or interacting features or requirements
+
+Same as SPE
+
+
+=============
+RFP can list requirements scenarios and use cases
+
+Can be used to seed requirements spec
