@@ -325,3 +325,15 @@ Same as SPE
 RFP can list requirements scenarios and use cases
 
 Can be used to seed requirements spec
+
+============
+datalog
+https://search.brave.com/search?q=natural+language+to+first+order+logic
+
+https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/type-providers/
+https://search.brave.com/search?q=UML+Diagrams+to+first+order+logic
+https://www.microsoft.com/en-us/research/publication/existential-fixed-point-logic/
+https://www.microsoft.com/en-us/research/uploads/prod/2012/07/214-A-perspective-and-the-potential.pdf
+https://www.cl.cam.ac.uk/~nk480/datafun.pdf
+https://search.brave.com/search?q=kanren+vs+datalog
+file:///C:/Users/micha/OneDrive%20-%20thenewobjective/Documents/Computer%20Science/CS%20557%20-%20Databases/principles-of-database-and-knowledge-base-systems-volume-1-1.pdf
