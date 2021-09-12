@@ -325,3 +325,13 @@ Same as SPE
 RFP can list requirements scenarios and use cases
 
 Can be used to seed requirements spec
+
+
+==========
+https://en.wikipedia.org/wiki/Knowledge-based_engineering
+https://en.wikipedia.org/wiki/ICAD_(software)
+https://en.wikipedia.org/wiki/Olog
+https://en.wikipedia.org/wiki/Personal_knowledge_base
+http://lambda-the-ultimate.org/node/5574
+https://www.google.com/search?ie=UTF-8&oe=UTF-8&q=%22knowledge+base%22&btnG=&domains=http%3A%2F%2Flambda-the-ultimate.org&sitesearch=http%3A%2F%2Flambda-the-ultimate.org
+https://gitlab.com/enriquepablo/syntreenet
