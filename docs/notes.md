@@ -346,3 +346,8 @@ https://www.microsoft.com/en-us/research/uploads/prod/2012/07/214-A-perspective-
 https://www.cl.cam.ac.uk/~nk480/datafun.pdf
 https://search.brave.com/search?q=kanren+vs+datalog
 file:///C:/Users/micha/OneDrive%20-%20thenewobjective/Documents/Computer%20Science/CS%20557%20-%20Databases/principles-of-database-and-knowledge-base-systems-volume-1-1.pdf
+
+=========
+impl
+https://dodisturb.me/posts/2018-12-25-The-Essence-of-Datalog.html
+https://www.typescriptlang.org/play?#code/MYGwhgzhAEBKCuICm0DeBYAUNH1gHsA7CAFwCd5gT8yAKLXR6MpMAEyJAE9oALVtgC5oAQWoBbADQMmOFu048ARvjZdhY-OIDaAXRk4AlGgC+WM5iwBLQiSRkAZmGAoAkgFEAjqaxZQkGE1xaCtxAAdkcSRbGA9vDGxcAmJySmo6AyZ5DkJuaDCWNgBlLnEVEGFSMhsAc2lE2WzFaDsycQhhABV7HX0G6ENUCwssMCUq5xI8cChobraQ8MjoklivH0tMf1mANTAyaCQADztCNhh54ITGZKq0mlom3J5CMCjK8lrjVGgIeDD7LRjMNfFsZjASsFjqdznMemhMrdUlQHk88q93r9PoQat9fv9AcDzKCAPRk8kU0HbGAAETAJDAIHwNQR-TJ0Gc7CQ4iswBEhBcpAeAA1JAAtYyCAC0HLYADcrBBAaKAJqGSQc4Bcnl8gVIIV0FXiwwAOky7LYIBNFGQtAA5Jy2NzefzBek7YZMjakEChuYgA
