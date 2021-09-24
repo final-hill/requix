@@ -27,7 +27,8 @@
     "@nuxt/content": "^1.14.0",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.15.1",
-    "nuxt": "^2.15.7"
+    "nuxt": "^2.15.7",
+    "vue-class-component": "^7.2.6"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.14.7",
@@ -40,7 +41,6 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.5",
     "eslint": "^7.29.0",
-    "eslint-plugin-header": "^3.1.1",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-vue": "^7.12.1",
     "jest": "^27.0.5",
