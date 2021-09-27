@@ -1,5 +1,5 @@
 <template>
-  <datalog />
+  <span>- Content -</span>
 </template>
 
 <script lang="ts">

@@ -83,7 +83,7 @@ classDiagram-v2
     Requirement <|-- Component
 
     class Role
-    Requirement <|-- Role
+    Responsibility <|-- Role
 
     class Limit
     Requirement <|-- Limit
@@ -98,7 +98,7 @@ classDiagram-v2
     MetaRequirement <|-- Justification
 
     class Responsibility
-    Role <|-- Responsibility
+    Requirement <|-- Responsibility
 
     class Obstacle
     Goal <|-- Obstacle
@@ -133,6 +133,9 @@ classDiagram-v2
     class NonFunctionalBehavior
     Behavior <|-- NonFunctionalBehavior
 
+    class Example
+    Behavior <|-- Example
+
     class ComputerProgram
     Artifact <|-- ComputerProgram
     
@@ -153,4 +156,16 @@ classDiagram-v2
 
     class Invariant
     Constraint <|-- Invariant
+
+    class Scenario
+    Example <|-- Scenario
+
+    class Use_Case
+    Scenario <|-- Use_Case
+
+    class User_Story
+    Scenario <|-- User_Story
+
+    class Test_Case
+    Scenario <|-- Test_Case
 ```
