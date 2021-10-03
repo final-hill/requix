@@ -1,6 +1,7 @@
 <template>
   <div>
     <GlobalHeader />
+    <Navigation />
     <main>
       <Nuxt />
     </main>
