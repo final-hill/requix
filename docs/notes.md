@@ -370,3 +370,29 @@ https://search.brave.com/search?q=%22knowledge+base%22+site%3Ahttp%3A%2F%2Flambd
 https://c4model.com/
 https://en.wikipedia.org/wiki/C4_model
 https://en.wikipedia.org/wiki/Deployment_diagram
+http://web.archive.org/web/20210812024754/https://about.gitlab.com/direction/plan/requirements_management/
+
+## Datalog
+https://dodisturb.me/posts/2018-12-25-The-Essence-of-Datalog.html
+https://www.researchgate.net/publication/2564786_Query_by_Class_Rule_and_Concept
+https://www.researchgate.net/publication/3296132_What_you_Always_Wanted_to_Know_About_Datalog_And_Never_Dared_to_Ask
+https://github.com/mozilla/mentat
+https://strange-loop-2012-notes.readthedocs.io/en/latest/emerging-languages/datalog.html
+https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-173.html
+https://github.com/benfogg/CS_236/tree/main/project1
+https://sites.google.com/site/pydatalog/Online-datalog-tutorial
+https://en.wikipedia.org/wiki/Datalog
+https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.225.4027&rep=rep1&type=pdf
+https://search.brave.com/search?q=datalog+unification+algorithm
+https://cs.nyu.edu/~davise/ai/datalog.html
+https://github.com/harc/nl-datalog/blob/master/datalog.js
+https://github.com/HarvardPL/AbcDatalog
+https://github.com/ysangkok/mitre-datalog.js
+https://itnext.io/solving-riddles-with-0-lines-of-program-b23994072dd0
+https://petevilter.me/post/datalog-typechecking/
+https://github.com/vilterp/datalog-ts/tree/master/core
+
+
+## Competitors/Comparables
+
+https://en.wikipedia.org/wiki/List_of_requirements_engineering_tools
