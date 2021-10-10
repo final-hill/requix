@@ -392,7 +392,18 @@ https://itnext.io/solving-riddles-with-0-lines-of-program-b23994072dd0
 https://petevilter.me/post/datalog-typechecking/
 https://github.com/vilterp/datalog-ts/tree/master/core
 
+======
+https://www.visual-paradigm.com/guide/uml-unified-modeling-language/what-is-object-diagram/
+https://en.wikipedia.org/wiki/Object_diagram
+
+https://web.archive.org/web/20190714232951/http://2011.secrus.org/2011/md/meyer-presentation.pdf
+
 
 ## Competitors/Comparables
 
 https://en.wikipedia.org/wiki/List_of_requirements_engineering_tools
+
+====
+Adobe XD vs Requix
+
+Note that it is common practice that a mockup is not used after a certain maturity in the project
