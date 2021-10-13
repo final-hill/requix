@@ -372,7 +372,11 @@ https://en.wikipedia.org/wiki/C4_model
 https://en.wikipedia.org/wiki/Deployment_diagram
 http://web.archive.org/web/20210812024754/https://about.gitlab.com/direction/plan/requirements_management/
 
+How to avoid the turing tarpit where everything is possible
+	but nothing is easy
+
 ## Datalog
+
 https://dodisturb.me/posts/2018-12-25-The-Essence-of-Datalog.html
 https://www.researchgate.net/publication/2564786_Query_by_Class_Rule_and_Concept
 https://www.researchgate.net/publication/3296132_What_you_Always_Wanted_to_Know_About_Datalog_And_Never_Dared_to_Ask
@@ -392,6 +396,9 @@ https://itnext.io/solving-riddles-with-0-lines-of-program-b23994072dd0
 https://petevilter.me/post/datalog-typechecking/
 https://github.com/vilterp/datalog-ts/tree/master/core
 
+## NLP
+
+https://uwm.pressbooks.pub/naturallanguage/
 
 ## Competitors/Comparables
 
