@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h2>Home</h2>
+    <h2>Settings</h2>
   </main>
 </template>
 
@@ -9,5 +9,5 @@ import Vue from 'vue'
 import Component from 'vue-class-component'
 
 @Component
-export default class Index extends Vue {}
+export default class Settings extends Vue {}
 </script>

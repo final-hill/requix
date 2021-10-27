@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e" pages="5">
     <diagram id="O7WTlvCp33XUubqFZ1--" name="Home">
-        <mxGraphModel dx="894" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="724" dy="344" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="fjS2Hc6mOtvslZl2IZi--0"/>
                 <mxCell id="fjS2Hc6mOtvslZl2IZi--1" parent="fjS2Hc6mOtvslZl2IZi--0"/>
@@ -115,7 +115,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="4iSue7rk1SImNDqT_zYn" name="New Project">
-        <mxGraphModel dx="894" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="724" dy="344" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="FRa5-Dtx2XHDz2ENp5OS-0"/>
                 <mxCell id="FRa5-Dtx2XHDz2ENp5OS-1" parent="FRa5-Dtx2XHDz2ENp5OS-0"/>
@@ -221,7 +221,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="ZtJgjDIMKp7BisbMvuuc" name="Project Home">
-        <mxGraphModel dx="894" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="724" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="E8BBEQxJFbt2sC_xQrq4-0"/>
                 <mxCell id="E8BBEQxJFbt2sC_xQrq4-1" parent="E8BBEQxJFbt2sC_xQrq4-0"/>
@@ -330,7 +330,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="_eCEEj4p0LH5yj7wJ3-8" name="Project Calculator Home">
-        <mxGraphModel dx="894" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="724" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="5bVqfZe_QmvwQCZrHGm1-0"/>
                 <mxCell id="5bVqfZe_QmvwQCZrHGm1-1" parent="5bVqfZe_QmvwQCZrHGm1-0"/>
@@ -419,7 +419,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="oFiqbiy1GEg4SaxPbsVU" name="ER model">
-        <mxGraphModel dx="894" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
+        <mxGraphModel dx="724" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
             <root>
                 <mxCell id="DQdORSxJeRakprbvXwFx-0"/>
                 <mxCell id="DQdORSxJeRakprbvXwFx-1" parent="DQdORSxJeRakprbvXwFx-0"/>
@@ -523,7 +523,7 @@
         </mxGraphModel>
     </diagram>
     <diagram id="D0Yk_aB6PkIlqMIoJVNY" name="Page-6">
-        <mxGraphModel dx="631" dy="561" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="724" dy="556" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="gxGmliVkJphRxrCcxjOC-0"/>
                 <mxCell id="gxGmliVkJphRxrCcxjOC-1" parent="gxGmliVkJphRxrCcxjOC-0"/>

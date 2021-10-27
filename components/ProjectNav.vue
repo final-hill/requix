@@ -1,3 +1,3 @@
 <template>
-    <nav>{NAV}</nav>
+    <nav></nav>
 </template>
