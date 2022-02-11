@@ -2,9 +2,10 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "files.associations": {
-        "**/azure/*.yml": "azure-pipelines"
-    },
+    "editor.formatOnSave": true,
+    "markdownlint.ignore": [
+        "LICENSE"
+    ],
     "typescript.tsdk": "node_modules\\typescript\\lib",
     "cSpell.ignorePaths": [
         "node_modules",
@@ -13,5 +14,8 @@
     "cSpell.ignoreWords": [
         "agpl",
         "spdx"
+    ],
+    "cSpell.words": [
+        "Requix"
     ]
 }

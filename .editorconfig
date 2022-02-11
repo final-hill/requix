@@ -1,9 +1,10 @@
-# EditorConfig: https://EditorConfig.org
-
-# top-most EditorConfig file
+# Editor configuration, see https://editorconfig.org
 root = true
 
-[*.{ts,json,config}]
+[*.ts]
+quote_type = single
+
+[*.{html,ts,json}]
 charset = utf-8
 end_of_line = crlf
 indent_size = 4

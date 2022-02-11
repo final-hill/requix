@@ -121,11 +121,6 @@ ER Model gives the domain
 		- https://stackoverflow.com/questions/8115748/why-should-i-avoid-loops-when-designing-relationships-for-a-database?noredirect=1&lq=1
 
 ====================================
-	• "A Requirement is a specification of a particular system property" [1]
-	• "a requirement is a singular documented physical or functional need that a particular design, product or process aims to satisfy" [2]
-	• "A Requirement is a Proposition" [3]
-		○ https://en.wikipedia.org/wiki/Proposition
-
 https://en.wikipedia.org/wiki/Requirements_engineering
 https://bertrandmeyer.com/2018/12/17/formal-picnic-approach-requirements/
 [1] http://se.ethz.ch/~meyer/publications/methodology/multirequirements.pdf
@@ -261,6 +256,10 @@ jRules
 	
 Codeless solution
 
+======
+
+UI Annotations
+
 squarespace
 ==============
 Design by Contract 
@@ -338,19 +337,14 @@ https://gitlab.com/enriquepablo/syntreenet
 ============
 datalog
 https://search.brave.com/search?q=natural+language+to+first+order+logic
+https://en.wikipedia.org/wiki/Entity%E2%80%93attribute%E2%80%93value_model
 
 https://docs.microsoft.com/en-us/dotnet/fsharp/tutorials/type-providers/
 https://search.brave.com/search?q=UML+Diagrams+to+first+order+logic
 https://www.microsoft.com/en-us/research/publication/existential-fixed-point-logic/
-https://www.microsoft.com/en-us/research/uploads/prod/2012/07/214-A-perspective-and-the-potential.pdf
-https://www.cl.cam.ac.uk/~nk480/datafun.pdf
-https://search.brave.com/search?q=kanren+vs+datalog
-file:///C:/Users/micha/OneDrive%20-%20thenewobjective/Documents/Computer%20Science/CS%20557%20-%20Databases/principles-of-database-and-knowledge-base-systems-volume-1-1.pdf
 
-=========
-impl
-https://dodisturb.me/posts/2018-12-25-The-Essence-of-Datalog.html
-https://www.typescriptlang.org/play?#code/MYGwhgzhAEBKCuICm0DeBYAUNH1gHsA7CAFwCd5gT8yAKLXR6MpMAEyJAE9oALVtgC5oAQWoBbADQMmOFu048ARvjZdhY-OIDaAXRk4AlGgC+WM5iwBLQiSRkAZmGAoAkgFEAjqaxZQkGE1xaCtxAAdkcSRbGA9vDGxcAmJySmo6AyZ5DkJuaDCWNgBlLnEVEGFSMhsAc2lE2WzFaDsycQhhABV7HX0G6ENUCwssMCUq5xI8cChobraQ8MjoklivH0tMf1mANTAyaCQADztCNhh54ITGZKq0mlom3J5CMCjK8lrjVGgIeDD7LRjMNfFsZjASsFjqdznMemhMrdUlQHk88q93r9PoQat9fv9AcDzKCAPRk8kU0HbGAAETAJDAIHwNQR-TJ0Gc7CQ4iswBEhBcpAeAA1JAAtYyCAC0HLYADcrBBAaKAJqGSQc4Bcnl8gVIIV0FXiwwAOky7LYIBNFGQtAA5Jy2NzefzBek7YZMjakEChuYgA
+
+file:///C:/Users/micha/OneDrive%20-%20thenewobjective/Documents/Computer%20Science/CS%20557%20-%20Databases/principles-of-database-and-knowledge-base-systems-volume-1-1.pdf
 
 ===========
 https://en.wikipedia.org/wiki/4%2B1_architectural_view_model
@@ -377,25 +371,13 @@ How to avoid the turing tarpit where everything is possible
 
 ## Datalog
 
-https://dodisturb.me/posts/2018-12-25-The-Essence-of-Datalog.html
 https://www.researchgate.net/publication/2564786_Query_by_Class_Rule_and_Concept
-https://www.researchgate.net/publication/3296132_What_you_Always_Wanted_to_Know_About_Datalog_And_Never_Dared_to_Ask
-https://github.com/mozilla/mentat
-https://strange-loop-2012-notes.readthedocs.io/en/latest/emerging-languages/datalog.html
-https://www2.eecs.berkeley.edu/Pubs/TechRpts/2009/EECS-2009-173.html
-https://github.com/benfogg/CS_236/tree/main/project1
-https://sites.google.com/site/pydatalog/Online-datalog-tutorial
-https://en.wikipedia.org/wiki/Datalog
-https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.225.4027&rep=rep1&type=pdf
-https://search.brave.com/search?q=datalog+unification+algorithm
-https://cs.nyu.edu/~davise/ai/datalog.html
-https://github.com/harc/nl-datalog/blob/master/datalog.js
-https://github.com/HarvardPL/AbcDatalog
-https://github.com/ysangkok/mitre-datalog.js
-https://itnext.io/solving-riddles-with-0-lines-of-program-b23994072dd0
-https://petevilter.me/post/datalog-typechecking/
-https://github.com/vilterp/datalog-ts/tree/master/core
 
+https://en.wikipedia.org/wiki/Knowledge_base
+https://scholia.toolforge.org/topic/Q593744
+https://en.wikipedia.org/wiki/Knowledge_representation_and_reasoning
+https://search.brave.com/search?q=knowledge+base+site%3Ahttp%3A%2F%2Flambda-the-ultimate.org
+https://en.wikipedia.org/wiki/Knowledge_Based_Software_Assistant
 ## NLP
 
 https://uwm.pressbooks.pub/naturallanguage/
@@ -414,3 +396,9 @@ https://en.wikipedia.org/wiki/List_of_requirements_engineering_tools
 Adobe XD vs Requix
 
 Note that it is common practice that a mockup is not used after a certain maturity in the project
+
+## References
+
+- [The Anatomy of Software Requirments](https://arxiv.org/ftp/arxiv/papers/1906/1906.06614.pdf)
+- [Multirequirements](http://se.ethz.ch/~meyer/publications/methodology/multirequirements.pdf)
+- [The role of formalism in system requirements](http://se.ethz.ch/~meyer/publications/requirements/formalism.pdf)
