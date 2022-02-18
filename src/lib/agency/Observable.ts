@@ -5,14 +5,8 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { Contract, Contracted } from '@final-hill/decorator-contracts';
 import Observer from './Observer';
 
-
-// Declared to workaround <https://github.com/final-hill/decorator-contracts/issues/231>
-export const observableContract = new Contract<Observable>();
-
-@Contracted(observableContract)
 export default abstract class Observable {
     abstract get eventTarget(): HTMLElement;
 

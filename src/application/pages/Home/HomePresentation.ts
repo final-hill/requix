@@ -5,16 +5,13 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { override } from '@final-hill/decorator-contracts';
 import ShellPresentation from '../Shell/ShellPresentation';
 
 export default class HomePresentation extends ShellPresentation {
-    @override
     override get defaultSlot() {
         return this.elRoot.querySelector('main')!;
     }
 
-    @override
     override initStyle(): string[] {
         return [
             ...super.initStyle(),
@@ -24,7 +21,6 @@ export default class HomePresentation extends ShellPresentation {
         ];
     }
 
-    @override
     override initRoot(): HTMLElement {
         const shell = super.initRoot(),
             main = shell.querySelector('main')!;

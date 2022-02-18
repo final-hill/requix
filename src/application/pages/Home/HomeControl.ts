@@ -5,7 +5,6 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { override } from '@final-hill/decorator-contracts';
 import PageControl from '../../../lib/agency/agents/page/PageControl';
 import ProjectListControl from '../../agents/ProjectList/ProjectListControl';
 import HomePresentation from './HomePresentation';
@@ -17,7 +16,6 @@ export default class HomeControl extends PageControl {
         this.addChild(new ProjectListControl());
     }
 
-    @override
     override initPresentation(): HomePresentation {
         return new HomePresentation();
     }

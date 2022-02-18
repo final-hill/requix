@@ -5,18 +5,9 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { Contract, Contracted, extend, override } from '@final-hill/decorator-contracts';
 import html from '../agents/htmlFactory';
-import Observable, { observableContract } from '../Observable';
+import Observable from '../Observable';
 
-const presentationContract = new Contract<Presentation>({
-    [extend]: observableContract,
-    initRoot: {
-        demands: self => self.elRoot == undefined
-    }
-});
-
-@Contracted(presentationContract)
 export default class Presentation extends Observable {
     elRootType!: HTMLElement;
     #elRoot: this['elRootType'];
@@ -31,6 +22,8 @@ export default class Presentation extends Observable {
     override get eventTarget(): this['elRootType'] {
         return this.#elRoot;
     }
+
+    get defaultSlot() { return this.elRoot; }
 
     get elRoot(): this['elRootType'] { return this.#elRoot; }
 
@@ -50,5 +43,13 @@ export default class Presentation extends Observable {
 
     initRoot() {
         return html.article();
+    }
+
+    addChild(presentation: Presentation) {
+        this.defaultSlot.appendChild(presentation.elRoot);
+    }
+
+    removeChild(presentation: Presentation) {
+        this.defaultSlot.removeChild(presentation.elRoot);
     }
 }

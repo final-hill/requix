@@ -5,11 +5,7 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { override } from '@final-hill/decorator-contracts';
-import Abstraction from '../../agent/Abstraction';
 import Control from '../../agent/Control';
-import Presentation from '../../agent/Presentation';
-import MissingPageControl from '../page/MissingPage/MissingPageControl';
 import PageControl from '../page/PageControl';
 import ApplicationAbstraction from './ApplicationAbstraction';
 import ApplicationPresentation from './ApplicationPresentation';
@@ -22,23 +18,13 @@ export default abstract class ApplicationControl extends Control<ApplicationPres
     constructor() {
         super();
         this.router = this.initRoutes();
-        this.router.routes.forEach(Page => this.addChild(new Page()));
         this.start();
     }
 
-    @override
-    override get children(): readonly PageControl[] {
-        return super.children as PageControl[];
-    }
-
-    get pages(): readonly PageControl[] { return this.children; }
-
-    @override
     override initAbstraction() {
         return new ApplicationAbstraction();
     }
 
-    @override
     override initPresentation() {
         return new ApplicationPresentation();
     }
@@ -56,10 +42,11 @@ export default abstract class ApplicationControl extends Control<ApplicationPres
     async routePage(path: string) {
         if (this.currentPage) {
             await this.currentPage.unload();
+            this.currentPage.remove();
         }
-        const Page = this.router.route(document.location.pathname),
-            page = this.pages.find(page => page instanceof Page) ?? new MissingPageControl();
-        this.currentPage = page;
+        const Page = this.router.route(document.location.pathname);
+        this.currentPage = new Page();
+        this.addChild(this.currentPage);
         await this.currentPage.load();
     }
 }

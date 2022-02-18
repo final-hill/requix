@@ -5,12 +5,10 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { override } from '@final-hill/decorator-contracts';
 import Presentation from '../../../lib/agency/agent/Presentation';
 import html from '../../../lib/agency/agents/htmlFactory';
 
 export default class ProjectListPresentation extends Presentation {
-    @override
     override initStyle(): string[] {
         return [
             ...super.initStyle(),
@@ -20,7 +18,6 @@ export default class ProjectListPresentation extends Presentation {
         ];
     }
 
-    @override
     override initRoot(): HTMLElement {
         const { section, header, h2 } = html;
 

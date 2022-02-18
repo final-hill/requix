@@ -5,11 +5,9 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { override } from '@final-hill/decorator-contracts';
-import ContainerPresentation from '../container/ContainerPresentation';
+import Presentation from '../../agent/Presentation';
 
-export default class PagePresentation extends ContainerPresentation {
-    @override
+export default class PagePresentation extends Presentation {
     override initStyle(): string[] {
         return [
             `html, body {

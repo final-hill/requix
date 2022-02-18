@@ -5,12 +5,10 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { override } from '@final-hill/decorator-contracts';
 import html from '../../../lib/agency/agents/htmlFactory';
 import PagePresentation from '../../../lib/agency/agents/page/PagePresentation';
 
 export default class ShellPresentation extends PagePresentation {
-    @override
     override initStyle(): string[] {
         return [
             ...super.initStyle(),
@@ -63,7 +61,7 @@ export default class ShellPresentation extends PagePresentation {
             }`
         ];
     }
-    @override
+
     override initRoot(): HTMLElement {
         const { div, nav, ul, li, a, main, h1 } = html;
 

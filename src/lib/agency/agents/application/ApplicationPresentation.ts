@@ -5,11 +5,13 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { override } from '@final-hill/decorator-contracts';
 import Presentation from '../../agent/Presentation';
 
 export default class ApplicationPresentation extends Presentation {
-    @override
+    override get defaultSlot(): this['elRootType'] {
+        return document.body;
+    }
+
     override initRoot(): HTMLElement {
         return document.documentElement;
     }

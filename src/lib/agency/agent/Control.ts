@@ -6,30 +6,9 @@
  */
 
 import Abstraction from './Abstraction';
-import Observer, { observerContract } from '../Observer';
+import Observer from '../Observer';
 import Presentation from './Presentation';
-import { Contract, Contracted, extend } from '@final-hill/decorator-contracts';
 
-// FIXME: This should not have to be exported
-export const controlContract = new Contract<Control>({
-    [extend]: observerContract,
-    initAbstraction: {
-        demands: self => self.abstraction == null
-    },
-    initPresentation: {
-        demands: self => self.presentation == null
-    },
-    load: {
-        demands: self => !self.isLoaded,
-        ensures: self => self.isLoaded
-    },
-    unload: {
-        demands: self => self.isLoaded,
-        ensures: self => !self.isLoaded
-    }
-});
-
-@Contracted(controlContract)
 export default class Control<
     P extends Presentation = Presentation,
     A extends Abstraction = Abstraction
@@ -77,6 +56,7 @@ export default class Control<
         child.remove();
         child.#parent = this;
         this.#children.push(child);
+        this.presentation.addChild(child.presentation);
     }
 
     async load() {
@@ -90,6 +70,7 @@ export default class Control<
     removeChild(child: Control) {
         child.#parent = undefined;
         this.#children = this.#children.filter(c => c !== child);
+        this.presentation.removeChild(child.presentation);
     }
 
     render(): HTMLElement | undefined {

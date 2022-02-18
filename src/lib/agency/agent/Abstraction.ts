@@ -5,15 +5,9 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { Contract, Contracted, extend, override } from '@final-hill/decorator-contracts';
 import html from '../agents/htmlFactory';
-import Observable, { observableContract } from '../Observable';
+import Observable from '../Observable';
 
-const abstractionContract = new Contract<Abstraction>({
-    [extend]: observableContract
-});
-
-@Contracted(abstractionContract)
 export default class Abstraction extends Observable {
     #eventTarget = html.div();
 
