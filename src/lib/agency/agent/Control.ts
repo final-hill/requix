@@ -5,17 +5,13 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import Abstraction from './Abstraction';
+import Repository from '../IRepository';
 import Observer from '../Observer';
 import Presentation from './Presentation';
 
-export default class Control<
-    P extends Presentation = Presentation,
-    A extends Abstraction = Abstraction
-    > extends Observer {
-
+export default class Control<P extends Presentation = Presentation> extends Observer {
     #presentation: P;
-    #abstraction!: A;
+    #abstraction?: Repository<any>;
     #parent?: Control;
     #children: Control[] = [];
     #isLoaded = false;
@@ -23,9 +19,7 @@ export default class Control<
     constructor() {
         super();
         this.#presentation = this.initPresentation();
-        // FIXME: this is triggering a private property error.
-        // Contract related?
-        //this.#abstraction = this.initAbstraction();
+        this.#abstraction = this.initAbstraction();
     }
 
     get children(): readonly Control[] {
@@ -52,15 +46,24 @@ export default class Control<
         return this.#isLoaded;
     }
 
-    addChild(child: Control) {
+    addChild(child: Control<Presentation>) {
         child.remove();
         child.#parent = this;
         this.#children.push(child);
         this.presentation.addChild(child.presentation);
+        child.onAttached();
     }
 
     async load() {
         this.#isLoaded = true;
+    }
+
+    onAttached() {
+        this.load();
+    }
+
+    onRemoved() {
+        this.unload();
     }
 
     remove() {
@@ -71,9 +74,10 @@ export default class Control<
         child.#parent = undefined;
         this.#children = this.#children.filter(c => c !== child);
         this.presentation.removeChild(child.presentation);
+        child.onRemoved();
     }
 
-    render(): HTMLElement | undefined {
+    render(): Element | undefined {
         const elContainer = this.#presentation.initRoot();
         this.#children.forEach(child => {
             const elChild = child.render();
@@ -87,9 +91,7 @@ export default class Control<
         this.#isLoaded = false;
     }
 
-    initAbstraction(): A {
-        return new Abstraction() as A;
-    }
+    initAbstraction(): this['abstraction'] { return undefined; }
 
     initPresentation(): P {
         return new Presentation() as P;

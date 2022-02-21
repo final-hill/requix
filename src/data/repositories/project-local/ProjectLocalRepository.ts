@@ -5,48 +5,37 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { Uuid } from '../../../domain/values/Uuid';
 import Project from '../../../domain/entities/Project';
 import { ProjectRepository } from '../../../domain/repositories/project.repository';
 import { ProjectLocal } from './ProjectLocal';
 import { ProjectLocalMapper } from './ProjectLocalMapper';
 
-export class ProjectLocalRepository extends ProjectRepository {
+const id = () => true;
+
+export default class ProjectLocalRepository implements ProjectRepository {
     #mapper = new ProjectLocalMapper();
 
-    constructor() {
-        super();
-        this.saveProject(
-            new Project({
-                id: new Uuid(),
-                artifacts: [],
-                downTraceable: false,
-                upTraceable: true,
-                requirements: [],
-                title: 'Dummy Project'
-            })
-        );
+    create(entity: Project): void {
+        const projects = this.read(id);
+        projects.push(entity);
+        localStorage.setItem('projects', JSON.stringify(this.#mapper.mapTo(entity)));
     }
 
-    async getProjectById(id: Uuid): Promise<Project | undefined> {
-        return (await this.getAllProjects())
-            .filter(project => project.id.equals(id))[0];
-    }
-
-    async getAllProjects(): Promise<Project[]> {
+    read(where: (entity: Project) => boolean): Project[] {
         const rawProjects: ProjectLocal[] = JSON.parse(localStorage.getItem('projects') ?? '[]');
 
-        return rawProjects.map(this.#mapper.mapFrom);
+        return rawProjects.map(this.#mapper.mapFrom).filter(where);
     }
 
-    async hasProject(id: Uuid): Promise<boolean> {
-        return (await this.getProjectById(id)) !== undefined;
+    update(where: (entity: Project) => boolean, action: (entity: Project) => Project): void {
+        const newProjects = this.read(id)
+            .map(project => where(project) ? action(project) : project);
+        localStorage.setItem('projects', JSON.stringify(newProjects.map(this.#mapper.mapTo)));
     }
 
-    async saveProject(project: Project): Promise<void> {
-        const projects = (await this.getAllProjects())
-            .filter(p => !p.id.equals(project.id));
-        projects.push(project);
-        localStorage.setItem('projects', JSON.stringify(projects.map(this.#mapper.mapTo)));
+    delete(where: (entity: Project) => boolean): void {
+        const newProjects = this.read(id)
+            .filter(project => !where(project));
+        localStorage.setItem('projects', JSON.stringify(newProjects.map(this.#mapper.mapTo)));
     }
 }

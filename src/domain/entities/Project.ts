@@ -5,7 +5,6 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { Contract, Contracted, invariant } from '@final-hill/decorator-contracts';
 import { Uuid } from '../values/Uuid';
 import Artifact from './Artifact';
 import Requirement from './Requirement';
@@ -19,6 +18,7 @@ export interface ProjectType {
     title: string;
 }
 
+/*
 const projectContract = new Contract<ProjectType>({
     [invariant]: self =>
         self.requirements.every(req => req.project === self) &&
@@ -26,13 +26,13 @@ const projectContract = new Contract<ProjectType>({
         // downTraceability: For every requirement at least one artifact follows from it.
         self.requirements.every(req => self.artifacts.some(art => art.followsFrom === req))
 });
+*/
 
 /**
  * The set of human processes involved in the planning,
  * construction, revision, and operation of a system.
  * Associated with a single system.
  */
-@Contracted(projectContract)
 export default class Project implements ProjectType {
     #artifacts!: Artifact[];
     #downTraceable!: boolean;

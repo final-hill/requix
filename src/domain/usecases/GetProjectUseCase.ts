@@ -18,7 +18,7 @@ export class GetProjectUseCase extends UseCase<Uuid, Project | undefined> {
         this.#repository = repository;
     }
 
-    override execute(id: Uuid): Promise<Project | undefined> {
-        return this.#repository.getProjectById(id);
+    override async execute(id: Uuid): Promise<Project | undefined> {
+        return this.#repository.read(project => project.id.equals(id))[0];
     }
 }

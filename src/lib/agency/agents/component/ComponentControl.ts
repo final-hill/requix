@@ -8,33 +8,21 @@
 import { Uuid } from '../../../../domain/values/Uuid';
 import Control from '../../agent/Control';
 import htmlFactory from '../../htmlFactory';
-import PagePresentation from './PagePresentation';
+import ComponentPresentation from './ComponentPresentation';
 
-export default class PageControl<P extends PagePresentation = PagePresentation> extends Control<P> {
-    static readonly styleId = `page-${new Uuid()}`;
-
-    #title = '{untitled}';
-
-    get title(): string {
-        return this.#title;
-    }
-    set title(value: string) {
-        this.#title = value;
-        document.title = value;
-    }
+export default class ComponentControl<P extends ComponentPresentation = ComponentPresentation> extends Control<P> {
+    static readonly styleId = `component-${new Uuid()}`;
 
     override initPresentation(): P {
-        return new PagePresentation() as P;
+        return new ComponentPresentation() as P;
     }
 
     override load(): Promise<void> {
         if (this.presentation) {
-            const { elRoot, styleRules } = this.presentation,
+            const { styleRules } = this.presentation,
                 styleId: string = Reflect.get(this.constructor, 'styleId'),
                 style = document.getElementById(styleId) as HTMLStyleElement ??
                     document.head.appendChild(htmlFactory.style({ id: styleId }));
-            document.body.appendChild(elRoot);
-            document.head.appendChild(style);
             styleRules.forEach(rule => {
                 style.sheet!.insertRule(rule);
             });
@@ -45,7 +33,8 @@ export default class PageControl<P extends PagePresentation = PagePresentation> 
 
     override unload(): Promise<void> {
         this.presentation?.elRoot.remove();
-        const style = document.getElementById(Reflect.get(this.constructor, 'styleId'));
+        const styleId: string = Reflect.get(this.constructor, 'styleId'),
+            style = document.getElementById(styleId);
         style?.remove();
 
         return super.unload();

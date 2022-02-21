@@ -5,7 +5,7 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import html from '../../../lib/agency/agents/htmlFactory';
+import htmlFactory from '../../../lib/agency/htmlFactory';
 import PagePresentation from '../../../lib/agency/agents/page/PagePresentation';
 
 export default class ShellPresentation extends PagePresentation {
@@ -63,7 +63,7 @@ export default class ShellPresentation extends PagePresentation {
     }
 
     override initRoot(): HTMLElement {
-        const { div, nav, ul, li, a, main, h1 } = html;
+        const { div, nav, ul, li, a, main, h1 } = htmlFactory;
 
         return div({ className: 'shell' }, [
             nav({ className: 'global-nav' }, [

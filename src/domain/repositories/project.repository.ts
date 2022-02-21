@@ -5,12 +5,7 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import { Uuid } from '../values/Uuid';
 import Project from '../entities/Project';
+import Repository from '../../lib/agency/IRepository';
 
-export abstract class ProjectRepository {
-    abstract hasProject(id: Uuid): Promise<boolean>;
-    abstract getProjectById(id: Uuid): Promise<Project | undefined>;
-    abstract getAllProjects(): Promise<Project[]>;
-    abstract saveProject(project: Project): Promise<void>;
-}
+export interface ProjectRepository extends Repository<Project> { }

@@ -14,7 +14,7 @@ export type HtmlFactory = {
     (props?: HtmlProps<K>, children?: (Node | string)[]) => HTMLElementTagNameMap[K]
 };
 
-const html: HtmlFactory = new Proxy(Object.create(null), {
+const htmlFactory: HtmlFactory = new Proxy(Object.create(null), {
     get(_target, propertyName: keyof HTMLElementTagNameMap, _receiver) {
         return (props: HtmlProps<any> = {}, children: (Node | string)[] = []) => {
             const node = document.createElement(propertyName);
@@ -32,4 +32,4 @@ const html: HtmlFactory = new Proxy(Object.create(null), {
     }
 });
 
-export default html;
+export default htmlFactory;

@@ -9,7 +9,7 @@ import { UseCase } from '../common/UseCase';
 import Project from '../entities/Project';
 import { ProjectRepository } from '../repositories/project.repository';
 
-export class GetAllProjectsUseCase extends UseCase<void, Project[]> {
+export default class GetAllProjectsUseCase extends UseCase<void, Project[]> {
     #repository: ProjectRepository;
 
     constructor(repository: ProjectRepository) {
@@ -17,7 +17,7 @@ export class GetAllProjectsUseCase extends UseCase<void, Project[]> {
         this.#repository = repository;
     }
 
-    override execute(): Promise<Project[]> {
-        return this.#repository.getAllProjects();
+    override async execute(): Promise<Project[]> {
+        return this.#repository.read(() => true);
     }
 }

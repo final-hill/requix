@@ -5,10 +5,10 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import Presentation from '../../../lib/agency/agent/Presentation';
-import html from '../../../lib/agency/agents/htmlFactory';
+import ComponentPresentation from '../../../lib/agency/agents/component/ComponentPresentation';
+import htmlFactory from '../../../lib/agency/htmlFactory';
 
-export default class ProjectListPresentation extends Presentation {
+export default class ProjectListPresentation extends ComponentPresentation {
     override initStyle(): string[] {
         return [
             ...super.initStyle(),
@@ -19,13 +19,12 @@ export default class ProjectListPresentation extends Presentation {
     }
 
     override initRoot(): HTMLElement {
-        const { section, header, h2 } = html;
+        const { section, header, h2 } = htmlFactory;
 
         return section({ className: 'project-list' }, [
             header({}, [
                 h2({}, ['Projects'])
-            ]),
-            'PROJECT LIST'
+            ])
         ]);
     }
 }

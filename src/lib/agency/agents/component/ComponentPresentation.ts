@@ -5,6 +5,6 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import Abstraction from '../../agent/Abstraction';
+import Presentation from '../../agent/Presentation';
 
-export default class ApplicationAbstraction extends Abstraction { }
+export default class ComponentPresentation extends Presentation { }

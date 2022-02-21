@@ -5,11 +5,11 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import html from '../agents/htmlFactory';
+import htmlFactory from '../htmlFactory';
 import Observable from '../Observable';
 
 export default class Presentation extends Observable {
-    elRootType!: HTMLElement;
+    elRootType!: Element;
     #elRoot: this['elRootType'];
     #styleRules: string[] = [];
 
@@ -23,7 +23,7 @@ export default class Presentation extends Observable {
         return this.#elRoot;
     }
 
-    get defaultSlot() { return this.elRoot; }
+    get defaultSlot(): Element { return this.elRoot; }
 
     get elRoot(): this['elRootType'] { return this.#elRoot; }
 
@@ -41,8 +41,8 @@ export default class Presentation extends Observable {
         );
     }
 
-    initRoot() {
-        return html.article();
+    initRoot(): Element {
+        return htmlFactory.article();
     }
 
     addChild(presentation: Presentation) {

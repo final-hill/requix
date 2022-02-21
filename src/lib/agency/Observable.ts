@@ -8,7 +8,7 @@
 import Observer from './Observer';
 
 export default abstract class Observable {
-    abstract get eventTarget(): HTMLElement;
+    abstract get eventTarget(): Element;
 
     dispatchEvent(event: Event) {
         this.eventTarget.dispatchEvent(event);

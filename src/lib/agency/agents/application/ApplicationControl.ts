@@ -7,11 +7,10 @@
 
 import Control from '../../agent/Control';
 import PageControl from '../page/PageControl';
-import ApplicationAbstraction from './ApplicationAbstraction';
 import ApplicationPresentation from './ApplicationPresentation';
 import Router from './Router';
 
-export default abstract class ApplicationControl extends Control<ApplicationPresentation, ApplicationAbstraction> {
+export default abstract class ApplicationControl extends Control<ApplicationPresentation> {
     router: Router;
     currentPage?: PageControl;
 
@@ -19,10 +18,6 @@ export default abstract class ApplicationControl extends Control<ApplicationPres
         super();
         this.router = this.initRoutes();
         this.start();
-    }
-
-    override initAbstraction() {
-        return new ApplicationAbstraction();
     }
 
     override initPresentation() {
