@@ -348,7 +348,8 @@
                 "accessibility": "no-public"
             }
         ],
-        "@typescript-eslint/member-ordering": "error",
+        /* Below is buggy with getters/setters */
+        /* "@typescript-eslint/member-ordering": "error", */
         "@typescript-eslint/no-param-reassign": "off",
         "@typescript-eslint/prefer-for-of": "error",
         "@typescript-eslint/prefer-function-type": "error",
