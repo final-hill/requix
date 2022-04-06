@@ -20,15 +20,15 @@ const artifactContract = new Contract<Artifact>({
  */
 @Contracted(artifactContract)
 export default class Artifact {
-    #upTraceable = false;
-    get upTraceable(): boolean { return this.#upTraceable; }
-    set upTraceable(value: boolean) { this.#upTraceable = value; }
+    private _upTraceable = false;
+    get upTraceable(): boolean { return this._upTraceable; }
+    set upTraceable(value: boolean) { this._upTraceable = value; }
 
-    #project?: Project;
-    get project(): Project | undefined { return this.#project; }
-    set project(value: Project | undefined) { this.#project = value; }
+    private _project?: Project;
+    get project(): Project | undefined { return this._project; }
+    set project(value: Project | undefined) { this._project = value; }
 
-    #followsFrom?: Requirement;
-    get followsFrom(): Requirement | undefined { return this.#followsFrom; }
-    set followsFrom(value: Requirement | undefined) { this.#followsFrom = value; }
+    private _followsFrom?: Requirement;
+    get followsFrom(): Requirement | undefined { return this._followsFrom; }
+    set followsFrom(value: Requirement | undefined) { this._followsFrom = value; }
 }

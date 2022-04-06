@@ -10,7 +10,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin'),
     ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
-    entry: './src/application/AppControl.ts',
+    entry: './src/infrastructure/AppControl.ts',
     devtool: 'source-map',
     mode: 'production',
     module: {
@@ -37,7 +37,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/lib/agency/agents/page/template.html',
+            template: 'src/infrastructure/lib/agency/template.html',
             filename: 'index.html'
         }),
         new CleanWebpackPlugin(),

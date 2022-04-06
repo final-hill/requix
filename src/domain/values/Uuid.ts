@@ -13,17 +13,17 @@ declare global {
 }
 
 export class Uuid {
-    #value: string;
+    private _value: string;
 
     constructor(value: string = self.crypto.randomUUID()) {
         const reUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
         if (!reUuid.test(value)) { throw new TypeError('Invalid UUID format'); }
 
-        this.#value = value;
+        this._value = value;
     }
 
-    equals(other: Uuid): boolean { return other.#value === this.#value; }
+    equals(other: Uuid): boolean { return other._value === this._value; }
 
-    toString() { return `{${this.#value}}`; }
+    toString() { return `{${this._value}}`; }
 }

@@ -5,14 +5,7 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-export interface ProjectLocalType {
-    id: string;
-    downTraceable: boolean;
-    upTraceable: boolean;
-    title: string;
-}
-
-export class ProjectLocal implements ProjectLocalType {
+export class ProjectLocal {
     id!: string;
     //artifacts: Artifact[]
     downTraceable!: boolean;
@@ -20,7 +13,7 @@ export class ProjectLocal implements ProjectLocalType {
     //requirements: Requirement[]
     title!: string;
 
-    constructor(params: ProjectLocalType) {
+    constructor(params: ProjectLocal) {
         Object.assign(this, params);
     }
 }

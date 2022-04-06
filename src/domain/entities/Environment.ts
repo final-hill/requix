@@ -12,10 +12,10 @@ import Constraint from './Constraint';
  * external to the project or system but with the potential to affect it or be affected by it.
  */
 export default class Environment {
-    #constraints: Constraint[] = [];
+    private _constraints: Constraint[] = [];
 
     /**
      * The requirements of the environment
      */
-    get constraints(): Constraint[] { return this.#constraints; }
+    get constraints(): Constraint[] { return this._constraints; }
 }

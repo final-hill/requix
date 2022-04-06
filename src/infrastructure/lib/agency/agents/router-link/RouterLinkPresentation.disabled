@@ -1,0 +1,51 @@
+/*!
+ * @license
+ * Copyright (C) 2022 Final Hill LLC
+ * SPDX-License-Identifier: AGPL-3.0-only
+ * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
+ */
+
+import Presentation, { PresentationOptions } from '../../agent/Presentation';
+import htmlFactory from '../../htmlFactory';
+
+export interface RouterLinkPresentationOptions extends PresentationOptions {
+    onClick?: (this: ThisType<RouterLinkPresentation>) => void;
+}
+
+export default class RouterLinkPresentation extends Presentation<HTMLAnchorElement> {
+    constructor(options: RouterLinkPresentationOptions) {
+        super(options);
+
+        this.elRoot.addEventListener('click', e => {
+            e.preventDefault();
+
+            options.onClick?.apply(this);
+        });
+    }
+
+    override initDom() {
+        return htmlFactory.a({ className: 'router-link' }, []);
+    }
+
+    override initStyle(): string[] {
+        return [
+            '.router-link {}'
+        ];
+    }
+
+    get routePath(): string {
+        return this.elRoot.href;
+    }
+
+    set routePath(value: string) {
+        this.elRoot.href = value;
+    }
+
+    get text(): string {
+        return this.elRoot.textContent ?? '';
+    }
+
+    set text(value: string) {
+        this.elRoot.textContent = value;
+    }
+}

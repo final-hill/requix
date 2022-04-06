@@ -11,6 +11,6 @@ import Requirement from './Requirement';
  * A set of related artifacts, devised to help meet certain goals.
  */
 export default class System {
-    #requirements: Requirement[] = [];
-    get requirements(): Requirement[] { return this.#requirements; }
+    private _requirements: Requirement[] = [];
+    get requirements(): Requirement[] { return this._requirements; }
 }

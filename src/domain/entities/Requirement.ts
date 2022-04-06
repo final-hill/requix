@@ -28,126 +28,126 @@ const requirementContract = new Contract<Requirement>({
  */
 @Contracted(requirementContract)
 export default class Requirement {
-    #belongsTo?: Requirement;
-    #characterizes?: Requirement;
-    #constrains?: Requirement;
-    #contradicts?: Requirement;
-    #details?: Requirement;
-    #disjoins?: Requirement;
-    #duplicates?: Requirement;
-    #excepts?: Requirement;
-    #explains?: Requirement;
-    #extends?: Requirement;
-    #follows?: Requirement;
-    #id?: string; // UUID?
-    #composite = false;
-    #isRelevant = false;
-    #wellFormed = false;
-    #project?: Project;
-    #property: Predicate = () => true;
-    #repeats?: Requirement;
-    #shares?: Requirement;
-    #statement?: string;
+    private _belongsTo?: Requirement;
+    private _characterizes?: Requirement;
+    private _constrains?: Requirement;
+    private _contradicts?: Requirement;
+    private _details?: Requirement;
+    private _disjoins?: Requirement;
+    private _duplicates?: Requirement;
+    private _excepts?: Requirement;
+    private _explains?: Requirement;
+    private _extends?: Requirement;
+    private _follows?: Requirement;
+    private _id?: string; // UUID?
+    private _composite = false;
+    private _isRelevant = false;
+    private _wellFormed = false;
+    private _project?: Project;
+    private _property: Predicate = () => true;
+    private _repeats?: Requirement;
+    private _shares?: Requirement;
+    private _statement?: string;
 
     /**
      *
      */
-    get id(): string | undefined { return this.#id; }
+    get id(): string | undefined { return this._id; }
 
     /**
      * A property of a project or system is relevant if it can affect or be affected by a stakeholder.
      * A property of the environment is relevant if it can affect or be affected by the project or system.
      */
-    get isRelevant() { return this.#isRelevant; }
+    get isRelevant() { return this._isRelevant; }
 
     /**
      *
      */
-    get belongsTo(): Requirement | undefined { return this.#belongsTo; }
+    get belongsTo(): Requirement | undefined { return this._belongsTo; }
 
     /**
      *
      */
-    get characterizes(): Requirement | undefined { return this.#characterizes; }
+    get characterizes(): Requirement | undefined { return this._characterizes; }
 
     /**
      *
      */
-    get constrains(): Requirement | undefined { return this.#constrains; }
+    get constrains(): Requirement | undefined { return this._constrains; }
 
     /**
      *
      */
-    get contradicts(): Requirement | undefined { return this.#contradicts; }
+    get contradicts(): Requirement | undefined { return this._contradicts; }
 
     /**
      *
      */
-    get details(): Requirement | undefined { return this.#details; }
+    get details(): Requirement | undefined { return this._details; }
 
     /**
      *
      */
-    get disjoins(): Requirement | undefined { return this.#disjoins; }
+    get disjoins(): Requirement | undefined { return this._disjoins; }
 
     /**
      *
      */
-    get duplicates(): Requirement | undefined { return this.#duplicates; }
+    get duplicates(): Requirement | undefined { return this._duplicates; }
 
     /**
      *
      */
-    get excepts(): Requirement | undefined { return this.#excepts; }
+    get excepts(): Requirement | undefined { return this._excepts; }
 
     /**
      *
      */
-    get extends(): Requirement | undefined { return this.#extends; }
+    get extends(): Requirement | undefined { return this._extends; }
 
     /**
      *
      */
-    get explains(): Requirement | undefined { return this.#explains; }
+    get explains(): Requirement | undefined { return this._explains; }
 
     /**
      *
      */
-    get follows(): Requirement | undefined { return this.#follows; }
+    get follows(): Requirement | undefined { return this._follows; }
 
     /**
      * Requirement/property is a compound expression
      */
-    get composite(): boolean { return this.#composite; }
+    get composite(): boolean { return this._composite; }
 
     /**
      * this.statement translatesTo this.property
      */
-    get wellFormed(): boolean { return this.#wellFormed; }
+    get wellFormed(): boolean { return this._wellFormed; }
 
     /**
      *
      */
-    get project(): Project | undefined { return this.#project; }
+    get project(): Project | undefined { return this._project; }
 
     /**
      * A formal, declarative sentence that is either true or false. A Predicate.
      */
-    get property(): Predicate { return this.#property; }
+    get property(): Predicate { return this._property; }
 
     /**
      *
      */
-    get repeats(): Requirement | undefined { return this.#repeats; }
+    get repeats(): Requirement | undefined { return this._repeats; }
 
     /**
      *
      */
-    get shares(): Requirement | undefined { return this.#shares; }
+    get shares(): Requirement | undefined { return this._shares; }
 
     /**
      * A human readable expression of a property.
      * A statement 'specifies' a property
      */
-    get statement(): string | undefined { return this.#statement; }
+    get statement(): string | undefined { return this._statement; }
 }
