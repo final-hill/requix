@@ -6,6 +6,7 @@
  */
 
 import ContainerControl from '../agents/container/ContainerControl';
+import kebab from '../util/kebab';
 import htmlFactory from '../htmlFactory';
 import Abstraction from './Abstraction';
 import Presentation from './Presentation';
@@ -42,8 +43,8 @@ export default abstract class Control {
      */
     constructor(options: ControlOptions = {}) {
         this.init(options);
-        this._abstraction = this.initAbstraction();
-        this._presentation = this.initPresentation();
+        this._abstraction = this.initAbstraction(options);
+        this._presentation = this.initPresentation(options);
     }
 
     /**
@@ -92,25 +93,22 @@ export default abstract class Control {
     /**
      * Initializes the {@link Abstraction} Facet
      *
+     * @param {ControlOptions} [options] the initialization options
      * @returns {Abstraction?} The new Abstraction
      */
-    initAbstraction(): this['abstractionType'] | undefined { return undefined; }
+    initAbstraction(options: ControlOptions): this['abstractionType'] | undefined { return undefined; }
 
     /**
      * Initializes the {@link Presentation} Facet
      *
+     * @param {ControlOptions} [options] the initialization options
      * @returns {Presentation} The new Presentation
      */
-    initPresentation(): this['presentationType'] | undefined { return undefined; }
+    initPresentation(options: ControlOptions): this['presentationType'] | undefined { return undefined; }
 
     attachStyles() {
         if (this.presentation) {
-            const kebab = (text: string) =>
-                text.replace(
-                    /[a-z][A-Z]/g,
-                    ($0: string) => `${$0[0]}-${$0[1].toLowerCase()}`
-                ),
-                { styleRules } = this.presentation,
+            const { styleRules } = this.presentation,
                 ruleList = Object.entries(styleRules).map(([selector, body]) =>
                     `${selector} {
                         ${Object.entries(body).map(([key, value]) => `${kebab(key)}: ${value};`).join('\r\n')}

@@ -5,6 +5,6 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import Abstraction from './lib/agency/agent/Abstraction';
+type AgentStyle = Record<string, Partial<CSSStyleDeclaration | { [key: string]: string }>>;
 
-export default class AppAbstraction extends Abstraction { }
+export default AgentStyle;

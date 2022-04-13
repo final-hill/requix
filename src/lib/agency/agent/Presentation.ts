@@ -18,8 +18,6 @@ export default abstract class Presentation {
 
     get isAttached() { return this._isAttached; }
 
-    get styleRules() { return this._styleRules; }
-
     get isHidden(): boolean {
         return this._elRoot.classList.contains('is-hidden');
     }
@@ -27,6 +25,8 @@ export default abstract class Presentation {
     set isHidden(value: boolean) {
         this._elRoot.classList.toggle('is-hidden', value);
     }
+
+    get styleRules() { return this._styleRules; }
 
     abstract initDom(): this['elRootType'];
 

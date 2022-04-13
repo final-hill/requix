@@ -6,6 +6,6 @@
  */
 
 import Project from '../../domain/entities/Project';
-import Repository from '../../infrastructure/lib/agency/IRepository';
+import Repository from '../../lib/agency/IRepository';
 
 export interface ProjectRepository extends Repository<Project> { }
