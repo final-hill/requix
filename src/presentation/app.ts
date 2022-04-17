@@ -6,32 +6,21 @@
  */
 
 import ApplicationControl from '../lib/agency/agents/application/ApplicationControl';
-import PanelControl from '../lib/agency/agents/panel/PanelControl';
-import TabNavigatorControl from '../lib/agency/agents/tab-navigator/TabNavigatorControl';
 import TabPosition from '../lib/agency/agents/tab-navigator/TabPosition';
-import TextSpanControl from '../lib/agency/agents/text-span/TextSpanControl';
-import FeatherIconName from '../lib/agency/feather-icon/FeatherIconName';
 import basic from './theme/basic';
+import home from './screens/home';
+import projects from './screens/projects';
+import GlobalNavControl from './agents/GlobalNav/GlobalNavControl';
 
 const app = new ApplicationControl({
-    label: 'Requix',
+    navLabel: 'Requix',
     theme: basic,
+    // TODO: implement lazy loading
     children: [
-        new TabNavigatorControl({
+        new GlobalNavControl({
             selectedIndex: 0,
             tabPosition: TabPosition.Left,
-            children: [
-                new PanelControl({
-                    title: 'Home',
-                    icon: FeatherIconName.home,
-                    children: [new TextSpanControl({ text: 'HOME' })]
-                }),
-                new PanelControl({
-                    title: 'Projects',
-                    icon: FeatherIconName.briefcase,
-                    children: [new TextSpanControl({ text: 'PROJECTS' })]
-                })
-            ]
+            children: [home, projects]
         })
     ]
 });

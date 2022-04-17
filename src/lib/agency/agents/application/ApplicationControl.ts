@@ -43,9 +43,9 @@ export default class ApplicationControl extends ContainerControl {
         this.attachTheme();
     }
 
-    get title(): string { return this.label ?? ''; }
+    get title(): string { return this.navLabel ?? ''; }
 
-    set title(value: string) { this.label = document.title = value; }
+    set title(value: string) { this.navLabel = document.title = value; }
 
     attachTheme() {
         const styleId = 'app-theme',
@@ -75,7 +75,7 @@ export default class ApplicationControl extends ContainerControl {
     override onAttached(): void {
         super.onAttached();
         this.theme = this._theme;
-        this.title = this.label ?? '{untitled}';
+        this.title = this.navLabel ?? '{untitled}';
     }
 
     override onDetached(): void {

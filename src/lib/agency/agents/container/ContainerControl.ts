@@ -10,8 +10,8 @@ import FeatherIconName from '../../feather-icon/FeatherIconName';
 import ContainerPresentation from './ContainerPresentation';
 
 export interface ContainerControlOptions {
-    icon?: FeatherIconName;
-    label?: string;
+    navIcon?: FeatherIconName;
+    navLabel?: string;
     children?: ContainerControl['childType'][];
 }
 
@@ -22,8 +22,8 @@ export default abstract class ContainerControl extends Control {
     override readonly presentationType!: ContainerPresentation;
 
     private _children!: this['childType'][];
-    private _icon?: FeatherIconName;
-    private _label?: string;
+    private _navIcon?: FeatherIconName;
+    private _navLabel?: string;
 
     constructor(options: ContainerControlOptions = {}) { super(options); }
 
@@ -31,11 +31,11 @@ export default abstract class ContainerControl extends Control {
         return Object.freeze([...this._children]);
     }
 
-    get icon() { return this._icon; }
-    set icon(value) { this._icon = value; }
+    get navIcon() { return this._navIcon; }
+    set navIcon(value) { this._navIcon = value; }
 
-    get label() { return this._label; }
-    set label(value) { this._label = value; }
+    get navLabel() { return this._navLabel; }
+    set navLabel(value) { this._navLabel = value; }
 
     appendChild(child: this['childType']) {
         child.remove();
@@ -55,14 +55,14 @@ export default abstract class ContainerControl extends Control {
 
     override init(options: ContainerControlOptions) {
         this._children = options.children ?? [];
-        this._icon = options.icon;
-        this._label = options.label;
+        this._navIcon = options.navIcon;
+        this._navLabel = options.navLabel;
     }
 
     override onAttached(): void {
         super.onAttached();
-        this.icon = this._icon;
-        this.label = this._label;
+        this.navIcon = this._navIcon;
+        this.navLabel = this._navLabel;
         const children = this._children.slice();
         this._children = [];
         this.appendChildren(...children);

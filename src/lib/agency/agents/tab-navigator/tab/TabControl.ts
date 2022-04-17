@@ -26,8 +26,8 @@ export default class TabControl extends ContainerControl {
 
     constructor(options: TabControlOptions = {}) { super(options); }
 
-    override set icon(value: FeatherIconName | undefined) {
-        super.icon = value;
+    override set navIcon(value: FeatherIconName | undefined) {
+        super.navIcon = value;
         this._iconControl.isHidden = value == undefined;
         this._iconControl.icon = value ?? FeatherIconName.xCircle;
     }
@@ -39,17 +39,17 @@ export default class TabControl extends ContainerControl {
         this.presentation!.isActive = value;
     }
 
-    override set label(value: string) {
-        super.label = value;
+    override set navLabel(value: string) {
+        super.navLabel = value;
         this._labelControl.text = value;
     }
 
     override init(options: TabControlOptions) {
         super.init(options);
-        this._iconControl = new FeatherIconControl({ icon: options.icon ?? FeatherIconName.xCircle });
-        this._iconControl.isHidden = options.icon == undefined;
-        this._labelControl = new TextSpanControl({ text: options.label ?? '' });
-        this._labelControl.isHidden = options.label == undefined;
+        this._iconControl = new FeatherIconControl({ icon: options.navIcon ?? FeatherIconName.xCircle });
+        this._iconControl.isHidden = options.navIcon == undefined;
+        this._labelControl = new TextSpanControl({ text: options.navLabel ?? '' });
+        this._labelControl.isHidden = options.navLabel == undefined;
         this._isActive = options.isActive ?? false;
     }
 

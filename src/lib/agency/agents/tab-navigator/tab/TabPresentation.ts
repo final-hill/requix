@@ -28,9 +28,14 @@ export default class TabPresentation extends ContainerPresentation {
         return {
             ...super.initStyle(),
             '.tab': {
+                alignItems: 'center',
                 boxSizing: 'border-box',
                 display: 'flex',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                justifyContent: ''
+            },
+            '.tab .feather-icon': {
+                marginRight: '0.2in'
             }
         };
     }

@@ -53,7 +53,7 @@ export default class TabNavigatorControl extends DisplayStackControl {
     }
 
     override appendChild(child: this['childType']): void {
-        this._tabBar.appendChild(new TabControl({ icon: child.icon, label: child.label }));
+        this._tabBar.appendChild(new TabControl({ navIcon: child.navIcon, navLabel: child.navLabel }));
         this._displayStack.appendChild(child);
     }
 
@@ -80,7 +80,7 @@ export default class TabNavigatorControl extends DisplayStackControl {
     }
 
     override prependChild(child: this['childType']): void {
-        this._tabBar.prependChild(new TabControl({ icon: child.icon, label: child.label }));
+        this._tabBar.prependChild(new TabControl({ navIcon: child.navIcon, navLabel: child.navLabel }));
         this._displayStack.prependChild(child);
     }
 
