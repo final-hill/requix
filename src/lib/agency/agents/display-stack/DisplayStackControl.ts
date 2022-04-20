@@ -28,9 +28,7 @@ export default class DisplayStackControl extends ContainerControl {
 
     get selectedIndex() { return this._selectedIndex; }
     set selectedIndex(value) {
-        if (this.selectedControl) {
-            this.selectedControl.isHidden = true;
-        }
+        this.children.forEach(child => child.isHidden = true);
         this._selectedIndex = value;
         if (this.selectedControl) {
             this.selectedControl.isHidden = false;

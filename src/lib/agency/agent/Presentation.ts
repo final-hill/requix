@@ -7,12 +7,21 @@
 
 import AgentStyle from '../AgentStyle';
 
+export interface PresentationOptions {
+    onClick?: (e: Event) => void;
+}
+
 export default abstract class Presentation {
     readonly elRootType!: HTMLElement | SVGElement;
 
     private _styleRules: AgentStyle = this.initStyle();
     private _elRoot = this.initDom();
     private _isAttached = false;
+    private _onClick?: (e: Event) => void;
+
+    constructor(options: PresentationOptions = {}) {
+        this._onClick = options.onClick;
+    }
 
     get elRoot(): this['elRootType'] { return this._elRoot; }
 

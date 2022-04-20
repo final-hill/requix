@@ -9,8 +9,22 @@ import AgentStyle from '../../../AgentStyle';
 import htmlFactory from '../../../htmlFactory';
 import ContainerPresentation from '../../container/ContainerPresentation';
 
+export interface TabPresentationControls {
+    onClick?: (e: Event) => void;
+}
+
 export default class TabPresentation extends ContainerPresentation {
     override readonly elRootType!: HTMLLabelElement;
+
+    private _onClick?: (e: Event) => void;
+
+    constructor(options: TabPresentationControls = {}) {
+        super();
+        this._onClick = options.onClick;
+        if (this._onClick) {
+            this.elRoot.addEventListener('click', this._onClick);
+        }
+    }
 
     get isActive(): boolean {
         return this.elRoot.classList.contains('is-active');

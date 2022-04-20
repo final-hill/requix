@@ -5,13 +5,13 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import PanelControl from '../../lib/agency/agents/panel/PanelControl';
 import TextSpanControl from '../../lib/agency/agents/text-span/TextSpanControl';
 import FeatherIconName from '../../lib/agency/feather-icon/FeatherIconName';
+import PageControl from '../agents/Page/PageControl';
 
-export default new PanelControl({
-    title: 'Home',
-    navLabel: 'Home',
-    navIcon: FeatherIconName.home,
-    children: [new TextSpanControl({ text: 'HOME' })]
+export default new PageControl({
+    title: 'Projects',
+    navLabel: 'Projects',
+    navIcon: FeatherIconName.briefcase,
+    children: [new TextSpanControl({ text: 'PROJECTS' })]
 });

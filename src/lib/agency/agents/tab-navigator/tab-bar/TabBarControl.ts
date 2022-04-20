@@ -11,8 +11,8 @@ import TabBarPresentation from './TabBarPresentation';
 import TabOrientation from './TabOrientation';
 
 export interface TabBarControlOptions extends ContainerControlOptions {
-    tabOrientation?: TabOrientation;
     selectedIndex?: number;
+    tabOrientation?: TabOrientation;
 }
 
 export default class TabBarControl extends ContainerControl {

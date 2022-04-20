@@ -8,8 +8,8 @@
 import ApplicationControl from '../lib/agency/agents/application/ApplicationControl';
 import TabPosition from '../lib/agency/agents/tab-navigator/TabPosition';
 import basic from './theme/basic';
-import home from './screens/home';
-import projects from './screens/projects';
+import home from './pages/home';
+import projects from './pages/projects';
 import GlobalNavControl from './agents/GlobalNav/GlobalNavControl';
 
 const app = new ApplicationControl({

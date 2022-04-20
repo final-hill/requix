@@ -13,6 +13,7 @@ import TabPresentation from './TabPresentation';
 
 export interface TabControlOptions extends ContainerControlOptions {
     isActive?: boolean;
+    onClick?: (e: Event) => void;
 }
 
 export default class TabControl extends ContainerControl {
@@ -22,6 +23,7 @@ export default class TabControl extends ContainerControl {
 
     private _iconControl!: FeatherIconControl;
     private _isActive!: boolean;
+    private _onClick?: (e: Event) => void;
     private _labelControl!: TextSpanControl;
 
     constructor(options: TabControlOptions = {}) { super(options); }
@@ -51,10 +53,13 @@ export default class TabControl extends ContainerControl {
         this._labelControl = new TextSpanControl({ text: options.navLabel ?? '' });
         this._labelControl.isHidden = options.navLabel == undefined;
         this._isActive = options.isActive ?? false;
+        this._onClick = options.onClick;
     }
 
-    override initPresentation(): this['presentationType'] {
-        return new TabPresentation();
+    override initPresentation(options: TabControlOptions): this['presentationType'] {
+        return new TabPresentation({
+            onClick: options.onClick
+        });
     }
 
     override onAttached(): void {

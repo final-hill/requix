@@ -32,7 +32,7 @@ export default class PanelPresentation extends ContainerPresentation {
         this._content.removeChild(presentation.elRoot);
     }
 
-    override initDom(): HTMLElement {
+    override initDom(): this['elRootType'] {
         const { article, header, section } = htmlFactory;
 
         return article({ className: 'panel' }, [
