@@ -18,6 +18,6 @@ export default class GetAllProjectsUseCase extends UseCase<void, Project[]> {
     }
 
     override async execute(): Promise<Project[]> {
-        return this._repository.read(() => true);
+        return [];
     }
 }

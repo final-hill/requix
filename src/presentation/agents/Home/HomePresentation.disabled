@@ -10,7 +10,7 @@ import htmlFactory from '../../lib/agency/htmlFactory';
 
 export default class HomePresentation extends Presentation<HTMLElement> {
     initDom(): HTMLElement {
-        return htmlFactory.section({ className: 'home' }, ['{Home}']);
+        return htmlFactory.section({ classList: ['home'] }, ['{Home}']);
     }
     initStyle(): string[] {
         return [

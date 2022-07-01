@@ -5,13 +5,15 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import TextSpanControl from '../../lib/agency/agents/text-span/TextSpanControl';
+import TextSpan from '../../lib/agency/agents/text-span/Control';
 import FeatherIconName from '../../lib/agency/feather-icon/FeatherIconName';
-import PageControl from '../agents/Page/PageControl';
+import Page from '../agents/Page/Control';
 
-export default new PageControl({
-    title: 'Projects',
-    navLabel: 'Projects',
-    navIcon: FeatherIconName.briefcase,
-    children: [new TextSpanControl({ text: 'PROJECTS' })]
-});
+export default class Projects extends Page {
+    override onAttached() {
+        this.title = this.navLabel = 'Projects';
+        this.navIcon = FeatherIconName.briefcase;
+        this.appendChild(new TextSpan({ text: 'PROJECTS' }));
+        super.onAttached();
+    }
+}

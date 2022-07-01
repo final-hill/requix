@@ -5,6 +5,7 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-type AgentStyle = (Record<string, Partial<CSSStyleDeclaration | { [key: string]: string }>>);
+import assert from './assert';
+import kebab from './kebab';
 
-export default AgentStyle;
+export { assert, kebab };

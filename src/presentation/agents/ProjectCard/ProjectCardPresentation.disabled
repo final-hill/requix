@@ -20,6 +20,6 @@ export default class ProjectCardPresentation extends Presentation<HTMLElement> {
     override initDom(): HTMLElement {
         const { article } = htmlFactory;
 
-        return article({ className: 'project-card' }, ['PROJECT CARD']);
+        return article({ classList: ['project-card'] }, ['PROJECT CARD']);
     }
 }

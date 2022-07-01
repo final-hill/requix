@@ -6,40 +6,25 @@
  */
 
 import AgentStyle from '../AgentStyle';
+import htmlFactory from '../htmlFactory';
+import StyleManager from '../StyleManager';
+import { assert } from '../util';
 
-export interface PresentationOptions {
-    onClick?: (e: Event) => void;
-}
-
-export default abstract class Presentation {
-    readonly elRootType!: HTMLElement | SVGElement;
-
-    private _styleRules: AgentStyle = this.initStyle();
-    private _elRoot = this.initDom();
-    private _isAttached = false;
-    private _onClick?: (e: Event) => void;
-
-    constructor(options: PresentationOptions = {}) {
-        this._onClick = options.onClick;
-    }
-
-    get elRoot(): this['elRootType'] { return this._elRoot; }
-
-    get isAttached() { return this._isAttached; }
+class Presentation {
+    elRoot: HTMLElement | SVGElement = htmlFactory.div();
+    readonly styleManager = new StyleManager();
 
     get isHidden(): boolean {
-        return this._elRoot.classList.contains('is-hidden');
-    }
+        assert(this.elRoot != undefined, 'No element is associated with this presentation');
 
+        return this.elRoot.classList.contains('is-hidden');
+    }
     set isHidden(value: boolean) {
-        this._elRoot.classList.toggle('is-hidden', value);
+        assert(this.elRoot != undefined, 'No element is associated with this presentation');
+        this.elRoot.classList.toggle('is-hidden', value);
     }
 
-    get styleRules() { return this._styleRules; }
-
-    abstract initDom(): this['elRootType'];
-
-    initStyle(): AgentStyle {
+    get styleRules(): AgentStyle {
         return {
             '.is-hidden': {
                 display: 'none'
@@ -47,9 +32,46 @@ export default abstract class Presentation {
         };
     }
 
-    onAttached() { this._isAttached = true; }
+    attachStyles(): void {
+        const { styleRules } = this;
 
-    onDetached() { this._isAttached = false; }
+        for (const selector in styleRules) {
+            const body = styleRules[selector];
+            if (typeof body != 'function') {
+                this.styleManager.addRule(selector, body);
+            }
+        }
+    }
 
-    remove() { this._elRoot.remove(); }
+    detachStyles() {
+        this.detach();
+        const { styleRules } = this;
+        for (const selector in styleRules) {
+            this.styleManager.removeRule(selector);
+        }
+    }
+
+    hide(): void {
+        this.isHidden = true;
+
+    }
+
+    onAttached(): void {
+        this.attachStyles();
+    }
+
+    onDetached(): void {
+        this.detachStyles();
+    }
+
+    detach(): void {
+        assert(this.elRoot != undefined, 'presentation is already removed');
+        this.elRoot.remove();
+    }
+
+    show(): void {
+        this.isHidden = false;
+    }
 }
+
+export default Presentation;

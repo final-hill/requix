@@ -31,7 +31,7 @@ export default class NewProjectCardPresentation extends Presentation<HTMLElement
     override initDom(): HTMLElement {
         const { button, div, figure, figcaption } = htmlFactory;
 
-        return button({ className: 'new-project-card', type: 'button' }, [
+        return button({ classList: ['new-project-card'], type: 'button' }, [
             figure({}, [
                 div(),
                 figcaption({}, ['New Project'])

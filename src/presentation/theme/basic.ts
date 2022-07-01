@@ -7,11 +7,13 @@
 
 import AgentTheme from '../../lib/agency/AgentTheme';
 
-export default {
+const basic: AgentTheme = {
     '--palette0': 'rgb(54, 68, 73)',
     '--palette1': 'rgb(35, 37, 39)',
     '--palette1-1': 'rgb(45, 47, 49)',
     '--palette2': 'rgb(218, 218, 218)',
     '--font-primary': 'var(--palette2)',
     '--font': 'Verdana, Geneva, Tahoma, sans-serif'
-} as AgentTheme;
+};
+
+export default basic;

@@ -7,22 +7,16 @@
 
 import AgentStyle from '../../AgentStyle';
 import htmlFactory from '../../htmlFactory';
-import DisplayStackPresentation from '../display-stack/DisplayStackPresentation';
+import DisplayStackPresentation from '../display-stack/Presentation';
 import TabPosition from './TabPosition';
 
-export interface TabNavigatorPresentationOptions {
-    tabPosition: TabPosition;
-}
-
-export default class TabNavigatorPresentation extends DisplayStackPresentation {
-    override readonly elRootType!: HTMLElement;
-
+class TabNavigatorPresentation extends DisplayStackPresentation {
+    override elRoot = htmlFactory.article({ classList: ['tab-navigator', 'tab-position_left'] });
     get tabPosition(): TabPosition {
         const clsName = this.elRoot.className.match(/tab-position_\w+/)![0];
 
         return clsName as TabPosition;
     }
-
     set tabPosition(value: TabPosition) {
         const clsName = this.elRoot.className.match(/tab-position_\w+/);
         if (clsName) {
@@ -30,21 +24,9 @@ export default class TabNavigatorPresentation extends DisplayStackPresentation {
         }
         this.elRoot.classList.add(value);
     }
-
-    constructor(options: TabNavigatorPresentationOptions) {
-        super();
-        this.tabPosition = options.tabPosition;
-    }
-
-    override initDom(): this['elRootType'] {
-        const { article } = htmlFactory;
-
-        return article({ className: 'tab-navigator' });
-    }
-
-    override initStyle(): AgentStyle {
+    override get styleRules(): AgentStyle {
         return {
-            ...super.initStyle(),
+            ...super.styleRules,
             '.tab-navigator': {
                 boxSizing: 'border-box',
                 display: 'flex'
@@ -64,3 +46,5 @@ export default class TabNavigatorPresentation extends DisplayStackPresentation {
         };
     }
 }
+
+export default TabNavigatorPresentation;

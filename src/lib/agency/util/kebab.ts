@@ -5,7 +5,6 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-
 const kebab = (text: string) =>
     text.replace(
         /[a-z][A-Z]/g,

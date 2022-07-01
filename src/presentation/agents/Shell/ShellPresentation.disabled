@@ -10,7 +10,7 @@ import htmlFactory from '../../lib/agency/htmlFactory';
 
 export default class ShellPresentation extends Presentation<HTMLDivElement> {
     initDom(): HTMLDivElement {
-        return htmlFactory.div({ className: 'shell' }, []);
+        return htmlFactory.div({ classList: ['shell'] }, []);
     }
 
     initStyle(): string[] {

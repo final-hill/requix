@@ -5,6 +5,6 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-type AgentTheme = Partial<CSSStyleDeclaration | { [key: string]: string }>;
+type AgentTheme = (Partial<CSSStyleDeclaration | { [key: string]: string }>);
 
 export default AgentTheme;

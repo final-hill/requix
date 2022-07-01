@@ -5,9 +5,9 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-export type HtmlProps<K extends keyof HTMLElementTagNameMap> = Partial<{
+export type HtmlProps<K extends keyof HTMLElementTagNameMap> = Partial<Omit<{
     [L in keyof HTMLElementTagNameMap[K]]: HTMLElementTagNameMap[K][L]
-}>;
+}, 'classList'> & { classList: string[] }>;
 
 export type HtmlFactory = {
     [K in keyof HTMLElementTagNameMap]:
@@ -17,8 +17,11 @@ export type HtmlFactory = {
 const htmlFactory: HtmlFactory = new Proxy(Object.create(null), {
     get(_target, propertyName: keyof HTMLElementTagNameMap, _receiver) {
         return (props: HtmlProps<any> = {}, children: (Node | string)[] = []) => {
-            const node = document.createElement(propertyName);
+            const node = document.createElement(propertyName),
+                classList = props.classList ?? [];
+            delete props.classList;
             Object.assign(node, props);
+            classList.forEach(cls => node.classList.add(cls));
             children.forEach(child => {
                 if (typeof child == 'string') {
                     node.appendChild(document.createTextNode(child));

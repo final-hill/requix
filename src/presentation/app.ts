@@ -5,22 +5,30 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import ApplicationControl from '../lib/agency/agents/application/ApplicationControl';
-import TabPosition from '../lib/agency/agents/tab-navigator/TabPosition';
+import Application from '../lib/agency/agents/application/Control';
+import TabPosition from '../lib/agency/agents/TabNavigator/TabPosition';
 import basic from './theme/basic';
-import home from './pages/home';
-import projects from './pages/projects';
-import GlobalNavControl from './agents/GlobalNav/GlobalNavControl';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import GlobalNav from './agents/GlobalNav/Control';
 
-const app = new ApplicationControl({
-    navLabel: 'Requix',
-    theme: basic,
-    // TODO: implement lazy loading
-    children: [
-        new GlobalNavControl({
+class Requix extends Application {
+    override start() {
+        super.start();
+
+        this.title = 'Requix';
+        this.theme = basic;
+
+        const nav = new GlobalNav({
             selectedIndex: 0,
-            tabPosition: TabPosition.Left,
-            children: [home, projects]
-        })
-    ]
-});
+            tabPosition: TabPosition.Left
+        });
+        nav.appendChild(new Home());
+        nav.appendChild(new Projects());
+        //nav.appendChildren(home, projects);
+
+        this.appendChild(nav);
+    }
+}
+
+const app = new Requix();

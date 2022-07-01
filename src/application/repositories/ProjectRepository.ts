@@ -5,7 +5,4 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import Project from '../../domain/entities/Project';
-import Repository from '../../lib/agency/IRepository';
-
-export interface ProjectRepository extends Repository<Project> { }
+export interface ProjectRepository { }

@@ -5,12 +5,9 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-export default abstract class Abstraction {
-    private _isAttached = false;
-
-    get isAttached() { return this._isAttached; }
-
-    onAttached() { this._isAttached = true; }
-
-    onDetached() { this._isAttached = false; }
+class Abstraction {
+    onAttached(): void { }
+    onDetached(): void { }
 }
+
+export default Abstraction;

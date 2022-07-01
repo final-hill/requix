@@ -5,148 +5,72 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import ContainerControl from '../agents/container/ContainerControl';
-import kebab from '../util/kebab';
-import htmlFactory from '../htmlFactory';
-import Abstraction from './Abstraction';
+import { assert } from '@final-hill/decorator-contracts';
+import Container from '../agents/container/Control';
 import Presentation from './Presentation';
-
-/**
- * The initialization options for the control
- */
-export interface ControlOptions { }
+import Abstraction from './Abstraction';
 
 /**
  * @see <https://en.wikipedia.org/wiki/Adapter_pattern>
  * @see <https://en.wikipedia.org/wiki/Mediator_pattern>
- *
  */
-export default abstract class Control {
-    static readonly styleId: string = 'Control';
+class Control {
+    abstraction: Abstraction = new Abstraction();
+    parent?: Container;
+    presentation: Presentation = new Presentation();
 
-    readonly presentationType!: Presentation;
-    readonly abstractionType!: Abstraction;
-
-    private _abstraction?: this['abstractionType'];
-    private _presentation?: this['presentationType'];
-    private _parent?: ContainerControl;
-    private _isAttached = false;
-
-    /**
-     * Initializes the Control by initializing its facets.
-     * This occurs in the following order:
-     * 1. init(options)
-     * 2. initAbstraction()
-     * 3. initPresentation()
-     *
-     * @param {ControlOptions} [options] the initialization options
-     */
-    constructor(options: ControlOptions = {}) {
-        this.init(options);
-        this._abstraction = this.initAbstraction(options);
-        this._presentation = this.initPresentation(options);
+    get hasParent(): boolean {
+        return this.parent != undefined;
     }
 
-    /**
-     * The {@link Abstraction} facet
-     */
-    get abstraction() { return this._abstraction; }
-
-    get hasParent() { return this._parent != undefined; }
-
-    get isAttached() { return this._isAttached; }
+    get isAttached(): boolean {
+        return this.hasParent && this.parent!.isAttached;
+    }
 
     get isHidden(): boolean {
-        return this._presentation?.isHidden ?? true;
+        return this.presentation.isHidden;
     }
-
     set isHidden(value: boolean) {
-        if (this._presentation) {
-            this._presentation.isHidden = value;
-        }
+        this.presentation.isHidden = value;
     }
 
-    /**
-     * The {@link ContainerControl} which owns this {@link Control}
-     */
-    get parent() { return this._parent; }
-    set parent(value) {
-        this._isAttached = value != undefined;
-        this._parent = value;
+    hide(): void {
+        this.presentation.hide();
     }
 
-    /**
-     * The {@link Presentation} facet
-     */
-    get presentation() { return this._presentation; }
-
-    /**
-     * To support the Template Method pattern, the constructor options
-     * are passed to this method before any other initialization to provide
-     * a means for the subclass to save and act upon the options before
-     * other overridden methods attempts to access them
-     *
-     * @param {ControlOptions} options The initialization options from the constructor
-     */
-    abstract init(options: ControlOptions): void;
-
-    /**
-     * Initializes the {@link Abstraction} Facet
-     *
-     * @param {ControlOptions} [options] the initialization options
-     * @returns {Abstraction?} The new Abstraction
-     */
-    initAbstraction(options: ControlOptions): this['abstractionType'] | undefined { return undefined; }
-
-    /**
-     * Initializes the {@link Presentation} Facet
-     *
-     * @param {ControlOptions} [options] the initialization options
-     * @returns {Presentation} The new Presentation
-     */
-    initPresentation(options: ControlOptions): this['presentationType'] | undefined { return undefined; }
-
-    attachStyles() {
-        if (this.presentation) {
-            const { styleRules } = this.presentation,
-                ruleList = Object.entries(styleRules).map(([selector, body]) =>
-                    `${selector} {
-                        ${Object.entries(body).map(([key, value]) => `${kebab(key)}: ${value};`).join('\r\n')}
-                    }`
-                ),
-                styleId: string = Reflect.get(this.constructor, 'styleId'),
-                style = document.getElementById(styleId) as HTMLStyleElement ??
-                    document.head.appendChild(htmlFactory.style({ id: styleId }));
-            ruleList.forEach(rule => {
-                style.sheet!.insertRule(rule);
-            });
-            // To make the rules visible in the DOM inspector
-            style.textContent = ruleList.join('\r\n');
-        }
+    onAttached(): void {
+        this.abstraction.onAttached();
+        this.presentation.onAttached();
     }
 
-    detachStyles() {
-        if (this.presentation) {
-            this.presentation.remove();
-            const styleId: string = Reflect.get(this.constructor, 'styleId'),
-                style = document.getElementById(styleId);
-            style?.remove();
-        }
+    onDetached(): void {
+        this.abstraction.onDetached();
+        this.presentation.onDetached();
     }
 
-    onAttached() {
-        this._abstraction?.onAttached();
-        this._presentation?.onAttached();
-        this.attachStyles();
+    remove(): void {
+        assert(this.hasParent, 'The control must have a parent before it can be removed');
+        this.parent!.removeChild(this);
     }
 
-    onDetached() {
-        this._abstraction?.onDetached();
-        this._presentation?.onDetached();
-        this.detachStyles();
-    }
-
-    remove() {
-        this.parent?.removeChild(this);
+    show(): void {
+        this.presentation.show();
     }
 }
+
+/**
+ * TODO: Enable NewtonScript style Comb Inheritance through the parent property
+ */
+const agentHandler: ProxyHandler<any> = {
+    get(target, propertyKey, receiver) {
+        if (Reflect.has(target, propertyKey)) {
+            return Reflect.get(target, propertyKey, receiver);
+        } else if (target.parent && Reflect.has(target.parent, propertyKey)) {
+            return Reflect.get(target.parent, propertyKey, target.parent);
+        } else {
+            throw new Error(`No such property: ${String(propertyKey)}`);
+        }
+    }
+};
+
+export default Control;
