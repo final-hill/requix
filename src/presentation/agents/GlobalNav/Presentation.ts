@@ -6,7 +6,7 @@
  */
 
 import TabNavigatorPresentation from '../../../lib/agency/agents/TabNavigator/Presentation';
-import AgentStyle from '../../../lib/agency/AgentStyle';
+import type { AgentStyle } from '../../../lib/agency/AgentStyle';
 
 class GlobalNavPresentation extends TabNavigatorPresentation {
     constructor() {

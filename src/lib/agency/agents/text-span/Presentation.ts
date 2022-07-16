@@ -6,7 +6,7 @@
  */
 
 import Presentation from '../../agent/Presentation';
-import AgentStyle from '../../AgentStyle';
+import type { AgentStyle } from '../../AgentStyle';
 import htmlFactory from '../../htmlFactory';
 
 interface TextSpanPresentationOptions {

@@ -5,19 +5,18 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
+import type { StyleRule } from './AgentStyle';
 import htmlFactory from './htmlFactory';
 import { kebab } from './util';
-
-type StyleRule = Partial<CSSStyleDeclaration | { [key: string]: string }>;
 
 class StyleManager {
     #sheet: CSSStyleSheet;
     #ruleRefCount: Map<string, number> = new Map();
 
-    constructor() {
+    constructor(id: string) {
         this.#sheet = ((
-            document.getElementById('agency')
-            ?? document.head.appendChild(htmlFactory.style({ id: 'agency' }))) as HTMLStyleElement
+            document.getElementById(id)
+            ?? document.head.appendChild(htmlFactory.style({ id }))) as HTMLStyleElement
         ).sheet!;
     }
 
@@ -34,9 +33,11 @@ class StyleManager {
             selector,
             (this.#ruleRefCount.get(selector) ?? 0) + 1
         );
+
+        // TODO: update the textContent of the tag for DOM inspector display
     }
     getSelectorIndex(selector: string): number {
-        // TypeSript bug? cssRules have selectorText but the type does not have this declared
+        // TypeScript bug? cssRules have selectorText but the type does not have this declared
         return [...this.#sheet.cssRules].findIndex(rule => (rule as CSSStyleRule).selectorText == selector);
     }
     removeRule(selector: string): void {

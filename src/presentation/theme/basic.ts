@@ -5,9 +5,9 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import AgentTheme from '../../lib/agency/AgentTheme';
+import type { AgentStyle } from '../../lib/agency/AgentStyle';
 
-const basic: AgentTheme = {
+const basic: AgentStyle = {
     '--palette0': 'rgb(54, 68, 73)',
     '--palette1': 'rgb(35, 37, 39)',
     '--palette1-1': 'rgb(45, 47, 49)',

@@ -7,7 +7,7 @@
 
 import Application from '../lib/agency/agents/application/Control';
 import TabPosition from '../lib/agency/agents/TabNavigator/TabPosition';
-import basic from './theme/basic';
+// import basic from './theme/basic';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import GlobalNav from './agents/GlobalNav/Control';
@@ -17,7 +17,6 @@ class Requix extends Application {
         super.start();
 
         this.title = 'Requix';
-        this.theme = basic;
 
         const nav = new GlobalNav({
             selectedIndex: 0,

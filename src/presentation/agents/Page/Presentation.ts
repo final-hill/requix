@@ -6,7 +6,7 @@
  */
 
 import PanelPresentation from '../../../lib/agency/agents/panel/Presentation';
-import AgentStyle from '../../../lib/agency/AgentStyle';
+import type { AgentStyle } from '../../../lib/agency/AgentStyle';
 
 class PagePresentation extends PanelPresentation {
     override get styleRules(): AgentStyle {

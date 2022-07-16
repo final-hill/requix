@@ -7,7 +7,6 @@
 
 import Container from '../container/Control';
 import ApplicationPresentation from './Presentation';
-import AgentTheme from '../../AgentTheme';
 
 class Application extends Container {
     override presentation = new ApplicationPresentation();
@@ -21,28 +20,11 @@ class Application extends Container {
         this.onAttached();
     }
 
-    get theme(): AgentTheme {
-        return this.presentation.theme;
-    }
-    set theme(value: AgentTheme) {
-        this.presentation.theme = value;
-    }
-
     get title(): string {
         return this.navLabel ?? '';
     }
     set title(value: string) {
         this.navLabel = document.title = value;
-    }
-
-    override onAttached(): void {
-        super.onAttached();
-        this.presentation.theme = this.theme;
-    }
-
-    override onDetached(): void {
-        this.presentation.detachTheme();
-        super.onDetached();
     }
 }
 

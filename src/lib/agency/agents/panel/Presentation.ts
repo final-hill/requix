@@ -7,7 +7,7 @@
 
 import ContainerPresentation from '../container/Presentation';
 import html from '../../htmlFactory';
-import AgentStyle from '../../AgentStyle';
+import type { AgentStyle } from '../../AgentStyle';
 import Presentation from '../../agent/Presentation';
 
 class PanelPresentation extends ContainerPresentation {

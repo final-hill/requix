@@ -5,14 +5,14 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import AgentStyle from '../AgentStyle';
+import type { AgentStyle } from '../AgentStyle';
 import htmlFactory from '../htmlFactory';
 import StyleManager from '../StyleManager';
 import { assert } from '../util';
 
 class Presentation {
     elRoot: HTMLElement | SVGElement = htmlFactory.div();
-    readonly styleManager = new StyleManager();
+    readonly styleManager = new StyleManager('agency');
 
     get isHidden(): boolean {
         assert(this.elRoot != undefined, 'No element is associated with this presentation');
@@ -33,14 +33,10 @@ class Presentation {
     }
 
     attachStyles(): void {
-        const { styleRules } = this;
-
-        for (const selector in styleRules) {
-            const body = styleRules[selector];
-            if (typeof body != 'function') {
-                this.styleManager.addRule(selector, body);
-            }
-        }
+        Object.entries(this.styleRules)
+            .forEach(([selector, body]) =>
+                this.styleManager.addRule(selector, body)
+            );
     }
 
     detachStyles() {
@@ -53,7 +49,6 @@ class Presentation {
 
     hide(): void {
         this.isHidden = true;
-
     }
 
     onAttached(): void {

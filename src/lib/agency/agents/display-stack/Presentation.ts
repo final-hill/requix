@@ -5,7 +5,7 @@
  * @see <https://spdx.org/licenses/AGPL-3.0-only.html>
  */
 
-import AgentStyle from '../../AgentStyle';
+import type { AgentStyle } from '../../AgentStyle';
 import htmlFactory from '../../htmlFactory';
 import ContainerPresentation from '../container/Presentation';
 

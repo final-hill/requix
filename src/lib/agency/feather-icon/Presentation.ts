@@ -6,7 +6,7 @@
  */
 
 import Presentation from '../agent/Presentation';
-import AgentStyle from '../AgentStyle';
+import type { AgentStyle } from '../AgentStyle';
 import svgFactory from '../svgFactory';
 import featherSprite from './feather-sprite.svg';
 import FeatherIconName from './FeatherIconName';
